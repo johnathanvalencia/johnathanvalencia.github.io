@@ -1,0 +1,15 @@
+{
+  "name": "johnathanvalencia",
+  "version": "1.0.0",
+  "description": "Creative leader focused on executing experiences that are human, engaging, and memorable with empathy and innovation.",
+  "main": "TweenMax.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss -o css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.4"
+  }
+}

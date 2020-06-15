@@ -1,0 +1,18 @@
+// nav { position: fixed; width: 100vw; top: 0px;
+//   hr { margin: 0; border-style: none; }
+//   .primary-nav { background: #fff;
+//     hr { background: #B1081E; width: 100%; height: 4px; }
+//     .menu { display: flex; justify-content: center; position: relative; width: 100%; height: 64px; background: #fff;
+//       .cyd-logo { position: relative; background: url(../creative/nav/cyd-logo.png) no-repeat; background-size: contain; width: 100px; height: 44px; margin-top: 8px; }
+//     }
+//   }
+//   .secondary-nav { display: none; background: rgba(255,255,255, 0);
+//     @include respond-to(tablet-w)  { display: block; }
+//     hr { background: rgba(0,0,0,0.1); width: 100%; height: 1px; }
+//     .menu { display: flex; justify-content: center; position: relative; color: #fff; font-weight: 700; font-size: 16px; line-height: 22px; margin: 12px 0 16px;
+//       ul { display: flex; flex-direction: row; margin: 0; padding: 0; list-style: none;
+//         li { margin: 0 28px; cursor: pointer; }
+//       }
+//     }
+//   }
+// }

@@ -1,0 +1,51 @@
+nav {
+  position: fixed;
+  width: 100vw;
+  top: 0px; }
+  nav hr {
+    margin: 0;
+    border-style: none; }
+  nav .primary-nav {
+    background: #fff; }
+    nav .primary-nav hr {
+      background: #B1081E;
+      width: 100%;
+      height: 4px; }
+    nav .primary-nav .menu {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      width: 100%;
+      height: 64px;
+      background: #fff; }
+      nav .primary-nav .menu .cyd-logo {
+        position: relative;
+        background: url(../creative/nav/cyd-logo.png) no-repeat;
+        background-size: contain;
+        width: 100px;
+        height: 44px;
+        margin-top: 8px; }
+  nav .secondary-nav {
+    background: rgba(255, 255, 255, 0); }
+    nav .secondary-nav hr {
+      background: rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: 1px; }
+    nav .secondary-nav .menu {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 22px;
+      margin: 12px 0 16px; }
+      nav .secondary-nav .menu ul {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        list-style: none; }
+        nav .secondary-nav .menu ul li {
+          margin: 0 28px;
+          cursor: pointer; }
