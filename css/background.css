@@ -1,12 +1,2 @@
-.hero-content {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center; }
-  .hero-content .content {
-    display: flex;
-    width: 100%;
-    max-width: 1160px; }
-    .hero-content .content .intro {
-      position: relative;
-      padding-right: 80px; }
+#fp-nav {
+  display: none !important; }

@@ -1,18 +1,24 @@
-// nav { position: fixed; width: 100vw; top: 0px;
-//   hr { margin: 0; border-style: none; }
-//   .primary-nav { background: #fff;
-//     hr { background: #B1081E; width: 100%; height: 4px; }
-//     .menu { display: flex; justify-content: center; position: relative; width: 100%; height: 64px; background: #fff;
-//       .cyd-logo { position: relative; background: url(../creative/nav/cyd-logo.png) no-repeat; background-size: contain; width: 100px; height: 44px; margin-top: 8px; }
-//     }
-//   }
-//   .secondary-nav { display: none; background: rgba(255,255,255, 0);
-//     @include respond-to(tablet-w)  { display: block; }
-//     hr { background: rgba(0,0,0,0.1); width: 100%; height: 1px; }
-//     .menu { display: flex; justify-content: center; position: relative; color: #fff; font-weight: 700; font-size: 16px; line-height: 22px; margin: 12px 0 16px;
-//       ul { display: flex; flex-direction: row; margin: 0; padding: 0; list-style: none;
-//         li { margin: 0 28px; cursor: pointer; }
-//       }
-//     }
-//   }
-// }
+header { position: fixed; display: flex; justify-content: center; width: 100vw; top: 36px; font-size: 16px; z-index: 999999;
+    .primary-nav { position: relative; display: flex; flex-direction: row; justify-content: space-between; width: 100%; max-width: 1248px;
+        .jv-logo { position: relative; display: flex; flex-direction: row; width: 244px; cursor: pointer;
+            .logo-johnathan-mask { position: relative; width: 107px; height: 22px; overflow: hidden; margin-left: 44px; 
+                .logo-johnathan { position: relative; width: 107px; height: 22px; }
+            }
+            .logo-valencia-mask { position: relative; width: 87px; height: 22px; overflow: hidden; margin-left: 1px; 
+                .logo-valencia { position: relative; width: 87px; height: 22px; }
+            }
+            .logo-end-mask { position: relative; width: 4px; height: 22px; overflow: hidden; margin-left: 1px; 
+                .logo-end { position: relative; width: 4px; height: 22px; }
+            }
+        }
+        .menu { position: relative; width: 28px; height: 18px; cursor: pointer; margin-top: 2px;
+            .line { position: absolute; width: 28px; height: 3px; border-radius: 2px; background: $dark-color; }
+            .anchor { width: 24px; top: 7.5px; right: 0px; }
+            .bottom { bottom: 0px; }
+            .hover-area { position: absolute; width: 100%; height: 100%; top: 0px; }
+        }
+        .menu-items { display: flex; flex-direction: column; align-items: flex-end; position: absolute; top: 60px; right: -8px; opacity: 0;
+            button { position: relative; border: 0px; width: max-content; height: 36px; background: #fff; box-shadow: 0 16px 32px -8px rgba(146,166,191,0.35); font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 500; letter-spacing: .2px; color: $dark-color; padding: 0 24px; border-radius: 18px; margin-bottom: 24px; cursor: pointer; }
+        }
+    }
+}

@@ -25,20 +25,16 @@ h1 {
 
 h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 42px;
-  font-weight: 300;
-  margin: 0; }
+  font-size: 40px;
+  font-weight: 500;
+  margin: 0;
+  padding-bottom: 24px; }
 
 h3 {
   font-family: 'Poppins', sans-serif;
-  font-size: 36px;
+  font-size: 32px;
+  line-height: 48px;
   font-weight: 400;
-  margin: 0; }
-
-h4 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 24px;
-  font-weight: 500;
   margin: 0; }
 
 p {
@@ -76,6 +72,108 @@ p.small {
 .cursor-pointer {
   cursor: pointer; }
 
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  top: 36px;
+  font-size: 16px;
+  z-index: 999999; }
+  header .primary-nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1248px; }
+    header .primary-nav .jv-logo {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      width: 244px;
+      cursor: pointer; }
+      header .primary-nav .jv-logo .logo-johnathan-mask {
+        position: relative;
+        width: 107px;
+        height: 22px;
+        overflow: hidden;
+        margin-left: 44px; }
+        header .primary-nav .jv-logo .logo-johnathan-mask .logo-johnathan {
+          position: relative;
+          width: 107px;
+          height: 22px; }
+      header .primary-nav .jv-logo .logo-valencia-mask {
+        position: relative;
+        width: 87px;
+        height: 22px;
+        overflow: hidden;
+        margin-left: 1px; }
+        header .primary-nav .jv-logo .logo-valencia-mask .logo-valencia {
+          position: relative;
+          width: 87px;
+          height: 22px; }
+      header .primary-nav .jv-logo .logo-end-mask {
+        position: relative;
+        width: 4px;
+        height: 22px;
+        overflow: hidden;
+        margin-left: 1px; }
+        header .primary-nav .jv-logo .logo-end-mask .logo-end {
+          position: relative;
+          width: 4px;
+          height: 22px; }
+    header .primary-nav .menu {
+      position: relative;
+      width: 28px;
+      height: 18px;
+      cursor: pointer;
+      margin-top: 2px; }
+      header .primary-nav .menu .line {
+        position: absolute;
+        width: 28px;
+        height: 3px;
+        border-radius: 2px;
+        background: #1E242B; }
+      header .primary-nav .menu .anchor {
+        width: 24px;
+        top: 7.5px;
+        right: 0px; }
+      header .primary-nav .menu .bottom {
+        bottom: 0px; }
+      header .primary-nav .menu .hover-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px; }
+    header .primary-nav .menu-items {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      position: absolute;
+      top: 60px;
+      right: -8px;
+      opacity: 0; }
+      header .primary-nav .menu-items button {
+        position: relative;
+        border: 0px;
+        width: max-content;
+        height: 36px;
+        background: #fff;
+        box-shadow: 0 16px 32px -8px rgba(146, 166, 191, 0.35);
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: .2px;
+        color: #1E242B;
+        padding: 0 24px;
+        border-radius: 18px;
+        margin-bottom: 24px;
+        cursor: pointer; }
+
+#fp-nav {
+  display: none !important; }
+
 .hero-content {
   position: relative;
   width: 100%;
@@ -88,3 +186,62 @@ p.small {
     .hero-content .content .intro {
       position: relative;
       padding-right: 80px; }
+    .hero-content .content .case-study {
+      position: relative;
+      width: 536px; }
+      .hero-content .content .case-study h3 {
+        margin-bottom: 56px; }
+      .hero-content .content .case-study .cta {
+        position: relative;
+        cursor: pointer;
+        background-image: linear-gradient(0deg, rgba(64, 172, 228, 0.2) 0%, rgba(64, 172, 228, 0.2) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.1em;
+        background-position: 0 100%;
+        transition: background-size 0.25s ease-out; }
+        .hero-content .content .case-study .cta:hover {
+          background-size: 100% 50%; }
+    .hero-content .content .capabilities {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      width: 100%; }
+      .hero-content .content .capabilities .three-split {
+        max-width: 336px; }
+        .hero-content .content .capabilities .three-split h3 {
+          margin-top: 8px; }
+    .hero-content .content .character {
+      position: relative; }
+      .hero-content .content .character .segmented-control {
+        position: relative;
+        padding-bottom: 16px; }
+        .hero-content .content .character .segmented-control .tab {
+          position: relative;
+          margin-right: 40px;
+          cursor: pointer; }
+        .hero-content .content .character .segmented-control .tab.one {
+          position: relative;
+          background-image: linear-gradient(0deg, #1e242b 0%, #1e242b 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 1px;
+          background-position: 0 100%;
+          transition: background-size 0.25s ease-out; }
+        .hero-content .content .character .segmented-control .tab.two {
+          position: relative;
+          cursor: pointer;
+          opacity: .5;
+          background-image: linear-gradient(0deg, rgba(64, 172, 228, 0.2) 0%, rgba(64, 172, 228, 0.2) 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 0.1em;
+          background-position: 0 110%;
+          transition: all 0.25s ease-out; }
+          .hero-content .content .character .segmented-control .tab.two:hover {
+            background-size: 100% 50%;
+            opacity: 1; }
+      .hero-content .content .character .tabOne h3 {
+        padding-top: 40px; }
+    .hero-content .content .collaboration {
+      position: relative; }
+    .hero-content .content .contact {
+      position: relative; }

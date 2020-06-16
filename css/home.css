@@ -1,0 +1,71 @@
+.hero-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .hero-content .content {
+    display: flex;
+    width: 100%;
+    max-width: 1160px; }
+    .hero-content .content .intro {
+      position: relative;
+      padding-right: 80px; }
+    .hero-content .content .case-study {
+      position: relative;
+      width: 536px; }
+      .hero-content .content .case-study h3 {
+        margin-bottom: 56px; }
+      .hero-content .content .case-study .cta {
+        position: relative;
+        cursor: pointer;
+        background-image: linear-gradient(0deg, rgba(64, 172, 228, 0.2) 0%, rgba(64, 172, 228, 0.2) 100%);
+        background-repeat: no-repeat;
+        background-size: 100% 0.1em;
+        background-position: 0 100%;
+        transition: background-size 0.25s ease-out; }
+        .hero-content .content .case-study .cta:hover {
+          background-size: 100% 50%; }
+    .hero-content .content .capabilities {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      width: 100%; }
+      .hero-content .content .capabilities .three-split {
+        max-width: 336px; }
+        .hero-content .content .capabilities .three-split h3 {
+          margin-top: 8px; }
+    .hero-content .content .character {
+      position: relative; }
+      .hero-content .content .character .segmented-control {
+        position: relative;
+        padding-bottom: 16px; }
+        .hero-content .content .character .segmented-control .tab {
+          position: relative;
+          margin-right: 40px;
+          cursor: pointer; }
+        .hero-content .content .character .segmented-control .tab.one {
+          position: relative;
+          background-image: linear-gradient(0deg, #1e242b 0%, #1e242b 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 1px;
+          background-position: 0 100%;
+          transition: background-size 0.25s ease-out; }
+        .hero-content .content .character .segmented-control .tab.two {
+          position: relative;
+          cursor: pointer;
+          opacity: .5;
+          background-image: linear-gradient(0deg, rgba(64, 172, 228, 0.2) 0%, rgba(64, 172, 228, 0.2) 100%);
+          background-repeat: no-repeat;
+          background-size: 100% 0.1em;
+          background-position: 0 110%;
+          transition: all 0.25s ease-out; }
+          .hero-content .content .character .segmented-control .tab.two:hover {
+            background-size: 100% 50%;
+            opacity: 1; }
+      .hero-content .content .character .tabOne h3 {
+        padding-top: 40px; }
+    .hero-content .content .collaboration {
+      position: relative; }
+    .hero-content .content .contact {
+      position: relative; }
