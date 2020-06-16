@@ -11,15 +11,15 @@
 
 <header>
   <nav class="primary-nav">
-    <div class="menu-items">
-      <button class="menu-item intro" onmouseover="menuItemHover('introduction')" onmouseout="menuItemHoverOut('introduction')">introduction</button>
-      <button class="menu-item case-studies" onmouseover="menuItemHover('casestudies')" onmouseout="menuItemHoverOut('casestudies')">case studies</button>
-      <button class="menu-item capabilities" onmouseover="menuItemHover('capabilities')" onmouseout="menuItemHoverOut('capabilities')">capabilities</button>
-      <button class="menu-item character" onmouseover="menuItemHover('character')" onmouseout="menuItemHoverOut('character')">character</button>
-      <button class="menu-item collaboration" onmouseover="menuItemHover('collaboration')" onmouseout="menuItemHoverOut('collaboration')">collaboration</button>
-      <button class="menu-item contact" onmouseover="menuItemHover('contact')" onmouseout="menuItemHoverOut('contact')">contact</button>
+    <div id="myMenu" class="menu-items">
+      <button data-menuanchor="introduction" class="menu-item intro active" onmouseover="menuItemHover('introduction')" onmouseout="menuItemHoverOut('introduction')" onclick="anchor('introduction')">introduction</button>
+      <button data-menuanchor="case-study" class="menu-item case-studies" onmouseover="menuItemHover('casestudies')" onmouseout="menuItemHoverOut('casestudies')" onclick="anchor('casestudies')">case studies</button>
+      <button data-menuanchor="capabilities" class="menu-item capabilities" onmouseover="menuItemHover('capabilities')" onmouseout="menuItemHoverOut('capabilities')"onclick="anchor('capabilities')">capabilities</button>
+      <button class="menu-item character" onmouseover="menuItemHover('character')" onmouseout="menuItemHoverOut('character')" onclick="anchor('character')">character</button>
+      <button class="menu-item collaboration" onmouseover="menuItemHover('collaboration')" onmouseout="menuItemHoverOut('collaboration')" onclick="anchor('collaboration')">collaboration</button>
+      <button class="menu-item contact" onmouseover="menuItemHover('contact')" onmouseout="menuItemHoverOut('contact')" onclick="anchor('contact')">contact</button>
     </div>
-    <div class="jv-logo">
+    <div class="jv-logo" onclick="anchor('introduction')">
       <div class="logo-johnathan-mask">
         <div class="logo-johnathan">
           <svg version="1.1" id="Layer_1" x="0px" y="0px"
@@ -337,7 +337,7 @@
         <div class="content">
           <div class="collaboration">
             <h2>Collaboration and Awards</h2>
-            <h3>Over the last 11 years, I’ve partnered with some world’s leading companies in every industry vertical.</h3>
+            <h3>Over the last 13 years, I’ve partnered with some world’s leading companies in every industry vertical.</h3>
           </div>
         </div>
       </div>
@@ -372,22 +372,12 @@
         </div>
       </div>
     </div>
-  	<!-- <div class="section">
-      <div class="hero-content">
-        <div class="homepage-content"></div>
-      </div>
-    </div> -->
   </div>
 
   <script type="text/javascript" src="js/gsap.min.js"></script>
-  <!-- <script type="text/javascript" src="js/ScrollToPlugin.min.js"></script> -->
   <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
   <script type="text/javascript" src="js/fullpage.js"></script>
-    <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js"></script> -->
   <script type="text/javascript" src="js/index.js"></script>
-  <!-- <script type="text/javascript" src="js/homepage-scroll-events.js"></script> -->
 
 </main>
 

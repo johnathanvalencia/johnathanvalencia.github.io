@@ -1,6 +1,7 @@
 var d = document,
     hamburger = true,
     menuClosed = true,
+    page = 'home',
     characterThem = document.getElementById("characterThem"),
     characterMe = document.getElementById("characterMe");
 
@@ -11,93 +12,92 @@ var myFullpage = new fullpage('#fullpage', {
       gsap.set('.menu-items', { autoAlpha:0 });
     },
     licenseKey: "CA747434-6C3640A7-81881045-30C01CBB",
-    anchors: ['introduction', 'case-study-receptiv', 'case-study-southeast-toyota-finance', 'capabilites', 'character', 'collaboration', 'contact'],
+    anchors: ['introduction', 'case-study-receptiv', 'case-study-setf', 'capabilities', 'character', 'collaboration', 'contact'],
     sectionsColor: ['', '', '', '', '', ''],
     navigation: true,
     navigationPosition: 'right',
-    // navigationTooltips: ['Close before you doze', 'Fire is getting faster', 'Make a 900&deg; difference', 'Take it down a notch', 'Good Morning America'],
     scrollOverflow: true,
-    menu: '#hero',
+    menu: '#myMenu',
     onLeave: function(origin, destination, direction){
   		var leavingSection = this;
-
       if (origin.anchor == 'introduction' && direction =='down'){
           logoCollapse();
+          page = 'casestudy';
+          console.log(page);
   		} else if(origin.anchor == 'case-study-receptiv' && direction =='up'){
-  			  logoExpand();
+          logoExpand();
+          page = 'home';
+          console.log(page);
   		}
 
-      // else if (origin.anchor == 'fire-is-getting-faster' && direction =='down'){
-  		//     //console.log("leaving fire-is-getting-faster");
-      //     TweenLite.to('.hero-bg-slide-2', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.hero-bg-slide-3', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.img-slide-3', .7, { y:800 }, { delay:.1, y:0, ease:Power1.easeOut });
-  		// } else if(origin.anchor == 'make-a-900-difference' && direction =='up'){
-  		// 	  //console.log("leaving make-a-900-difference");
-      //     TweenLite.to('.hero-bg-slide-3', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.to('.hero-bg-slide-2', .6, { autoAlpha:1, ease:Expo.easeOut });
-  		// }
+      else if (origin.anchor == 'case-study-receptiv' && direction =='down'){
+        page = 'casestudy';
+        console.log(page);
+  		} else if(origin.anchor == 'case-study-setf' && direction =='up'){
+        page = 'casestudy';  
+        console.log(page);
+      }
+      
+      else if (origin.anchor == 'case-study-setf' && direction =='down'){
+        page = 'capabilities';
+        console.log(page);	    
+  		} else if(origin.anchor == 'capabilities' && direction =='up'){
+        page = 'casestudy';
+        console.log(page);
+      }
+      
+      else if (origin.anchor == 'capabilities' && direction =='down'){
+        page = 'character';
+        console.log(page);
+  		} else if(origin.anchor == 'character' && direction =='up'){
+        page = 'capabilities';
+        console.log(page);
+      }
+      
+      else if (origin.anchor == 'character' && direction =='down'){
+        page = 'collaboration';
+        console.log(page);
+  		} else if(origin.anchor == 'collaboration' && direction =='up'){
+        page = 'character';
+        console.log(page);
+      }
+      
+      else if (origin.anchor == 'collaboration' && direction =='down'){
+        page = 'contact';
+        console.log(page);
+  		} else if(origin.anchor == 'contact' && direction =='up'){
+        page = 'collaboration';
+        console.log(page);
+  		}
 
-      // else if (origin.anchor == 'make-a-900-difference' && direction =='down'){
-  		//     //console.log("leaving make-a-900-difference");
-      //     TweenLite.to('.hero-bg-slide-3', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.hero-bg-slide-4', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.img-slide-4', .7, { y:800 }, { delay:.1, y:0, ease:Power1.easeOut });
-  		// } else if(origin.anchor == 'take-it-down-a-notch' && direction =='up'){
-  		// 	  //console.log("leaving take-it-down-a-notch");
-      //     TweenLite.to('.hero-bg-slide-4', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.to('.hero-bg-slide-3', .6, { autoAlpha:1, ease:Expo.easeOut });
-  		// }
-
-      // else if (origin.anchor == 'take-it-down-a-notch' && direction =='down'){
-  		//     //console.log("leaving take-it-down-a-notch");
-      //     TweenLite.to('.hero-bg-slide-4', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.hero-bg-slide-5', .6, { display:'block', autoAlpha:0 }, { autoAlpha:1, ease:Expo.easeOut });
-      //     TweenLite.fromTo('.img-slide-5', .7, { y:800 }, { delay:.1, y:0, ease:Power1.easeOut });
-  		// } else if(origin.anchor == 'good-morning-america' && direction =='up'){
-  		// 	  //console.log("leaving good-morning-america");
-      //     TweenLite.to('.hero-bg-slide-5', .6, { autoAlpha:0, ease:Expo.easeOut });
-      //     TweenLite.to('.hero-bg-slide-4', .6, { autoAlpha:1, ease:Expo.easeOut });
-  		// }
-
-  		// //after leaving section 3
-  		// else if(origin.anchor == 'good-morning-america' && direction =='down'){
-  		// 	//console.log("hide navigation");
-      //   TweenLite.to('#fp-nav', .2, { autoAlpha:0 });
-      //   TweenLite.to('.secondary-nav', .2, { delay:.4, background: 'rgba(255, 255, 255, 1)' });
-      //   TweenLite.to('.secondary-nav .menu', .2, { delay:.4, color:'#191C23' });
-      //   TweenLite.to('.hero-nav-items', .2, { autoAlpha:0 });
-  		// }
-
-  		// else if(origin.anchor == 'cbyd' && direction == 'up'){
-  		// 	//console.log("show navigation");
-      //   TweenLite.to('#fp-nav', .2, { autoAlpha:1 });
-      //   TweenLite.to('.secondary-nav', .1, { background: 'rgba(255, 255, 255, 0)' });
-      //   TweenLite.to('.secondary-nav .menu', .1, { color:'#ffffff' });
-      //   TweenLite.to('.hero-nav-items', .2, { autoAlpha:1 });
-  		// }
   	},
     afterLoad: function( section, origin, destination, direction){
   		var loadedSlide = this;
 
       // TweenLite.set(['.hero-bg-slide-2','.hero-bg-slide-3','.hero-bg-slide-4','.hero-bg-slide-5'], { display:'block' });
 
-      // if(origin.anchor == 'close-before-you-doze'){
-  		// 	TweenLite.to('.hero-bg-slide-1', .6, { autoAlpha:1, ease:Expo.easeOut });
-      //   TweenLite.to(['.hero-bg-slide-2','.hero-bg-slide-3','.hero-bg-slide-4','.hero-bg-slide-5'], .6, { autoAlpha:0, ease:Expo.easeOut });
-  		// } else if(origin.anchor == 'fire-is-getting-faster'){
-  		// 	TweenLite.to('.hero-bg-slide-2', .6, { autoAlpha:1, ease:Expo.easeOut });
-      //   TweenLite.to(['.hero-bg-slide-1','.hero-bg-slide-3','.hero-bg-slide-4','.hero-bg-slide-5'], .6, { autoAlpha:0, ease:Expo.easeOut });
-      // } else if(origin.anchor == 'make-a-900-difference'){
-  		// 	TweenLite.to('.hero-bg-slide-3', .6, { autoAlpha:1, ease:Expo.easeOut });
-      //   TweenLite.to(['.hero-bg-slide-1','.hero-bg-slide-2','.hero-bg-slide-4','.hero-bg-slide-5'], .6, { autoAlpha:0, ease:Expo.easeOut });
-      // } else if(origin.anchor == 'take-it-down-a-notch'){
-  		// 	TweenLite.to('.hero-bg-slide-4', .6, { autoAlpha:1, ease:Expo.easeOut });
-      //   TweenLite.to(['.hero-bg-slide-1','.hero-bg-slide-2','.hero-bg-slide-3','.hero-bg-slide-5'], .6, { autoAlpha:0, ease:Expo.easeOut });
-      // } else if(origin.anchor == 'good-morning-america'){
-  		// 	TweenLite.to('.hero-bg-slide-5', .6, { autoAlpha:1, ease:Expo.easeOut });
-      //   TweenLite.to(['.hero-bg-slide-1','.hero-bg-slide-2','.hero-bg-slide-3','.hero-bg-slide-4'], .6, { autoAlpha:0, ease:Expo.easeOut });
-  		// }
+      if(origin.anchor == 'introduction'){
+        page = 'home';
+        console.log(page);
+  		} else if(origin.anchor == 'case-study-receptiv'){
+        page = 'casestudy';
+        console.log(page);
+      } else if(origin.anchor == 'case-study-setf'){
+        page = 'casestudy';
+        console.log(page);
+      } else if(origin.anchor == 'capabilities'){
+        page = 'capabilities';
+        console.log(page);
+      } else if(origin.anchor == 'character'){
+        page = 'character';
+        console.log(page);
+  		} else if(origin.anchor == 'collaboration'){
+        page = 'collaboration';
+        console.log(page);
+      } else if(origin.anchor == 'contact'){
+        page = 'contact';
+        console.log(page);
+  		}
   	}
 });
 
@@ -137,7 +137,7 @@ function openMenu() {
   menuClosed = false;
   gsap.to('.menu .top', { duration:.4, transformOrigin:'top left', x:3, y:-2, rotation:45, ease:Expo.easeOut });
   gsap.to('.menu .bottom', { duration:.4, transformOrigin:'bottom left', x:3, y:2, rotation:-45, ease:Expo.easeOut });
-  gsap.to('.menu .anchor', { duration:.4, width:'3px', height:'24px', y:56.5, ease:Expo.easeOut, onComplete:function() {
+  gsap.to('.menu .anchor', { duration:.4, width:'3px', height:'24px', x:29, y:56.5, ease:Expo.easeOut, onComplete:function() {
     hamburger = false;
   } });
   gsap.set('.menu-items', { autoAlpha:1 });
@@ -206,7 +206,30 @@ function showMe() {
   tabTwo.style.display = 'none';
 }
 
+function anchor(item) {
+  if ( item == 'introduction' ) {
+    window.location.href = '#introduction';
+  } else if ( item == 'casestudies' ) {
+    window.location.href = '#case-study-receptiv';
+  } else if ( item == 'capabilities' ) {
+    window.location.href = '#capabilities';
+  } else if ( item == 'character' ) {
+    window.location.href = '#character';
+  } else if ( item == 'collaboration' ) {
+    window.location.href = '#collaboration';
+  } else if ( item == 'contact' ) {
+    window.location.href = '#contact';
+  }
+  closeMenu();
+}
 
+function anchorCaseStudy() {
+  window.location.href = '#case-study';
+}
+
+function anchorCaseStudy() {
+  window.location.href = '#case-study';
+}
 
 // function skipHero() {
 //   TweenLite.to('#fp-nav', .2, { autoAlpha:0 });
