@@ -67,5 +67,11 @@
         padding-top: 40px; }
     .hero-content .content .collaboration {
       position: relative; }
+      .hero-content .content .collaboration .list {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        max-width: 288px;
+        margin-top: 48px; }
     .hero-content .content .contact {
       position: relative; }

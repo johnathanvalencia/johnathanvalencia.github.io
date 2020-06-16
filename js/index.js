@@ -1,6 +1,8 @@
 var d = document,
     hamburger = true,
-    menuClosed = true;
+    menuClosed = true,
+    characterThem = document.getElementById("characterThem"),
+    characterMe = document.getElementById("characterMe");
 
 var myFullpage = new fullpage('#fullpage', {
     afterRender: function(){
@@ -189,6 +191,22 @@ function menuItemHoverOut(item) {
     gsap.to('.menu-items .contact', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
   }
 }
+
+function showThem() { 
+  characterThem.className = "tab";
+  characterMe.className = "tab not-selected";
+  tabOne.style.display = 'none';
+  tabTwo.style.display = 'flex';
+}
+
+function showMe() { 
+  characterThem.className = "tab not-selected";
+  characterMe.className = "tab";
+  tabOne.style.display = 'block';
+  tabTwo.style.display = 'none';
+}
+
+
 
 // function skipHero() {
 //   TweenLite.to('#fp-nav', .2, { autoAlpha:0 });

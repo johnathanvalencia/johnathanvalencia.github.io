@@ -10,26 +10,53 @@
         .capabilities { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%;
             .three-split { max-width: 336px; 
                 h3 { margin-top: 8px; }
+                .list { display: flex; flex-direction: column; position: relative; max-width: 288px; margin-top: 32px; 
+                    .list-item { display: flex; flex-direction: row; justify-content: space-between; width: 100%; padding: 16px 0; border-bottom: 2px solid $cloud-grey-color; cursor: pointer; 
+                        .bullet { opacity: .2; transition: all 0.25s ease-out; }
+                        &:hover .bullet { opacity:1 }
+                    }
+                }
             }
         }
-        .character { position: relative;
+        .character { position: relative; width: 100%;
             .segmented-control { position: relative; padding-bottom: 16px;
                 .tab { position: relative; margin-right: 40px; cursor: pointer; }
-                .tab.one { position: relative; background-image: linear-gradient(0deg,rgba(30,36,43, 1) 0%,rgba(30,36,43, 1) 100%); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; transition: background-size 0.25s ease-out; }
-                .tab.two { position: relative; cursor: pointer; opacity: .5; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 110%; transition: all 0.25s ease-out;
+                // .tab { background-image: linear-gradient(0deg,rgba(30,36,43, 1) 0%,rgba(30,36,43, 1) 100%); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; transition: all 0.25s ease-out; }
+                .tab { background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 100%; background-position: 0 100%; transition: all 0.25s ease-out; }
+                .not-selected { opacity: .5; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: all 0.25s ease-out;
                     &:hover { background-size: 100% 50%; opacity: 1; }
                 }
             }
-            .tabOne {
+            #tabOne { display: block; height: 324px;
                 h3 { padding-top: 40px; }
+            }
+            #tabTwo { display: none; flex-direction: row; justify-content: space-between; position: relative; width: 200%; height: 324px; padding-top: 40px;
+                .reference { display: flex; flex-direction: row; justify-content: space-between; position: relative; max-width: 360px; height: max-content; background: #FFFFFF; border: 2px solid #E8ECF1; box-shadow: 0 20px 40px -10px #E8ECF1; padding: 28px 22px; }   
             }
         }
         .collaboration { position: relative;
-
+            
         }
         .contact { position: relative;
-
+            .contact-form { width: 400px; padding-top: 24px;
+                .form-block { position: relative; }
+                .error { border: solid 2px #ef4f53; }
+                .cross, .check { position: absolute; top: 11px; right: -4px; border-radius: 50%; width: 16px; height: 16px; background-size: 50%; padding: 4px; background-repeat: no-repeat; background-position: 50% 50%; transform: translate(-50%, -50%);
+                    @include respond-to(tablet-w) { top: 50%; right: -48px; width: 26px; height: 26px; }
+                }
+                .cross { background-color: #ef4f53; background-image: url(https://wayfinder-ux.com/img/contact/close.svg); }
+                .check { background-color: #4ba8f4; background-image: url(https://wayfinder-ux.com/img/contact/checkMark.svg); }
+                input { color: $dark-color; width: 100%; height: 42px; margin: 8px 0 24px; font-family: 'Poppins', sans-serif; font-size: 16px; padding-left: 12px; font-weight: 400; border: 2px solid $cloud-grey-color; border-radius: 5px; }
+                textarea { width: 100%; min-width: 100%; height: 144px; max-height: 144px; margin: 8px 0 32px; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 12px; font-weight: 400; border: 2px solid $cloud-grey-color; border-radius: 5px; }
+                button { position: relative; border: 0px; width: max-content; background: #fff; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; color: $dark-color; padding: 0; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: background-size 0.25s ease-out; cursor: pointer; 
+                    &:hover { background-size: 100% 50%; }
+                }
+            }
         }
     }
 }
 
+footer { display: flex; justify-content: center; align-items: center; position: absolute; width: 100%; height: 50px; bottom: 0px; display: none;
+    .footer-bg { position: absolute; width: 100%; height: 100%; background-color: $cloud-grey-color; opacity: .5;  }
+    .copyright { position: relative; width: 1160px; max-width: 1160px; font-size: 14px; font-weight: 500; opacity: 1; }
+}

@@ -253,9 +253,43 @@
             </div>
             <div class="three-split">
               <h3>Heart of a designer.</h3>
+              <div class="list">
+                <div class="list-item">
+                  <span>User Research</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>Product Strategy</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>UX/UI Design</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>Product Design</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>User Testing</span><span class="bullet">&bull;</span>
+                </div>
+              </div>
             </div>
             <div class="three-split">
               <h3>Brain of an engineer.</h3>
+              <div class="list">
+                <div class="list-item">
+                  <span>Rapid Prototyping</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>Front End Development</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>UI Animation</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>Microinteraction</span><span class="bullet">&bull;</span>
+                </div>
+                <div class="list-item">
+                  <span>A/B Testing</span><span class="bullet">&bull;</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -267,12 +301,32 @@
           <div class="character">
             <h2>Character</h2>
             <div class="segmented-control">
-              <span class="tab one">How I think about product</span>
-              <span class="tab two">What others say about me</span>
+              <span id="characterMe" class="tab" onclick="showMe()">How I think about product</span>
+              <span id="characterThem" class="tab not-selected" onclick="showThem()">What others say about me</span>
             </div>
-            <div class="tabOne">
+            <div id="tabOne">
               <h3>I help businesses by bringing an empathetic mindset, human-centered methodologies and best practices of a UX process to their challenges.</h3>
               <h3>At the right moment, clear messaging and micro-interactions can create an emotional connection between the user and your brand.</h3>
+            </div>
+            <div id="tabTwo">
+              <div class="reference">
+                <p class="small">Johnathan is a rock star, plain and simple. His attention to detail is unparalleled. His thoughtful approach to design creates unforgettable experiences that are universally loved.</p>
+              </div>
+              <div class="reference">
+                <p class="small">He approached every project with an eagerness to find an innovative way to improve upon it. He executed things swiftly and efficiently while adding his own creative thinking. He was always willing to help and remained patient in educating others on the product.</p>
+              </div>
+              <div class="reference">
+                <p class="small">Every time there is a need to come up with new creative or tech solutions, he was always the guy to go to. His concepts and seamless execution of those concepts are the reason we've been able to offer such innovative and forward-thinking products to our clients.</p>
+              </div>
+              <div class="reference">
+                <p class="small">His creative executions and ideas helped me and my colleagues close deals for brands like Coca-Cola, Hershey's and Merck to name a few. He grasps client challenges and needs and open to developing new, inventive ways to move business forward.</p>
+              </div>
+              <div class="reference">
+                <p class="small">He approached every project with an eagerness to find an innovative way to improve upon it. He executed things swiftly and efficiently while adding his own creative thinking. He was always willing to help and remained patient in educating others on the product.</p>
+              </div>
+              <div class="reference">
+                <p class="small">Every time there is a need to come up with new creative or tech solutions, he was always the guy to go to. His concepts and seamless execution of those concepts are the reason we've been able to offer such innovative and forward-thinking products to our clients.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -293,6 +347,27 @@
         <div class="content">
           <div class="contact">
             <h2>Want to bring your idea to life or just want to talk UX?<br>Lets connect!</h2>
+            <form id="contactForm" class="contact-form scroll-reveal" novalidate>
+              <div class="form-block">
+                <label>Full Name</label>
+                <input ref="inputField" data-msg="" type="text" tabindex="1" id="name" name="name" required>
+                <label id="name-error" ref="errorIcon" for="name" class="error cross" style="display: none;"></label>
+                <label id="name-valid" ref="successIcon" class="check" style="display: none;" ></label>
+              </div>
+              <div class="form-block">
+                <label>Email Address</label>
+                <input ref="inputField" data-msg="" type="text" tabindex="2" id="email" name="email" required>
+                <label id="email-error" ref="errorIcon" for="email" class="error cross" style="display: none;"></label>
+                <label id="email-valid" ref="successIcon" class="check" style="display: none;" ></label>
+              </div>
+              <div class="form-block">
+                <label>Message</label>
+                <textarea ref="inputField" data-msg="" tabindex="3" placeholder="" id="message" name="message" required></textarea>
+                <label id="message-error" ref="errorIcon" for="message" class="error cross" style="display: none;"></label>
+                <label id="message-valid" ref="successIcon" class="check" style="display: none;" ></label>
+              </div>
+              <button class="cta" type="submit" value="Send">Send</button>
+            </form>
           </div>
         </div>
       </div>
@@ -315,5 +390,10 @@
   <!-- <script type="text/javascript" src="js/homepage-scroll-events.js"></script> -->
 
 </main>
+
+<footer>
+  <span class="footer-bg"></span>
+  <span class="copyright">Designed and Developed by Johnathan Valencia 2020</span>
+</footer>
 
 </html>
