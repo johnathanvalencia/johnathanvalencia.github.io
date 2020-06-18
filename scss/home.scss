@@ -1,4 +1,4 @@
-.hero-content { position: relative; width: 100%; display: flex; justify-content: center;
+.hero-content { position: relative; width: 100%; display: flex; justify-content: center; opacity: 0;
     .content { display: flex; width: 100%; max-width: 1160px; 
         .intro { position: relative; padding-right: 80px; }
         .case-study { position: relative; width: 536px; 
@@ -44,12 +44,13 @@
                 .cross, .check { position: absolute; top: 11px; right: -4px; border-radius: 50%; width: 16px; height: 16px; background-size: 50%; padding: 4px; background-repeat: no-repeat; background-position: 50% 50%; transform: translate(-50%, -50%);
                     @include respond-to(tablet-w) { top: 50%; right: -48px; width: 26px; height: 26px; }
                 }
-                .cross { background-color: #ef4f53; background-image: url(https://wayfinder-ux.com/img/contact/close.svg); }
-                .check { background-color: #4ba8f4; background-image: url(https://wayfinder-ux.com/img/contact/checkMark.svg); }
+                // .cross { background-color: #ef4f53; background-image: url(https://wayfinder-ux.com/img/contact/close.svg); }
+                // .check { background-color: #4ba8f4; background-image: url(https://wayfinder-ux.com/img/contact/checkMark.svg); }
                 input { color: $dark-color; width: 100%; height: 42px; margin: 8px 0 24px; font-family: 'Poppins', sans-serif; font-size: 16px; padding-left: 12px; font-weight: 400; border: 2px solid $cloud-grey-color; border-radius: 5px; }
                 textarea { width: 100%; min-width: 100%; height: 144px; max-height: 144px; margin: 8px 0 32px; font-family: 'Poppins', sans-serif; font-size: 16px; padding: 12px; font-weight: 400; border: 2px solid $cloud-grey-color; border-radius: 5px; }
                 button { position: relative; border: 0px; width: max-content; background: #fff; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 400; color: $dark-color; padding: 0; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: background-size 0.25s ease-out; cursor: pointer; 
                     &:hover { background-size: 100% 50%; }
+                    &:focus { outline: none; }
                 }
             }
         }

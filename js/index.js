@@ -8,14 +8,16 @@ var d = document,
 var myFullpage = new fullpage('#fullpage', {
     afterRender: function(){
   		var pluginContainer = this;
-      // TweenLite.set('.hero-content', { opacity:'1' });
+      /*gsap.set('.hero-content', { opacity:'1' });*/
       gsap.set('.menu-items', { autoAlpha:0 });
+      introAni();
     },
     licenseKey: "CA747434-6C3640A7-81881045-30C01CBB",
     anchors: ['introduction', 'case-study-receptiv', 'case-study-setf', 'capabilities', 'character', 'collaboration', 'contact'],
-    sectionsColor: ['', '', '', '', '', ''],
-    navigation: true,
-    navigationPosition: 'right',
+    /*sectionsColor: ['', '', '', '', '', ''],*/
+    navigation: false,
+    /*navigationPosition: 'right',*/
+    scrollingSpeed: 800,
     scrollOverflow: true,
     menu: '#myMenu',
     onLeave: function(origin, destination, direction){
@@ -23,51 +25,61 @@ var myFullpage = new fullpage('#fullpage', {
       if (origin.anchor == 'introduction' && direction =='down'){
           logoCollapse();
           page = 'casestudy';
-          console.log(page);
+          //console.log(page);
   		} else if(origin.anchor == 'case-study-receptiv' && direction =='up'){
           logoExpand();
           page = 'home';
-          console.log(page);
+          //console.log(page);
   		}
 
       else if (origin.anchor == 'case-study-receptiv' && direction =='down'){
         page = 'casestudy';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
   		} else if(origin.anchor == 'case-study-setf' && direction =='up'){
         page = 'casestudy';  
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
       }
       
       else if (origin.anchor == 'case-study-setf' && direction =='down'){
         page = 'capabilities';
-        console.log(page);	    
+        checkMenuStatus();
+        //console.log(page);	    
   		} else if(origin.anchor == 'capabilities' && direction =='up'){
         page = 'casestudy';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
       }
       
       else if (origin.anchor == 'capabilities' && direction =='down'){
         page = 'character';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
   		} else if(origin.anchor == 'character' && direction =='up'){
         page = 'capabilities';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
       }
       
       else if (origin.anchor == 'character' && direction =='down'){
         page = 'collaboration';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
   		} else if(origin.anchor == 'collaboration' && direction =='up'){
         page = 'character';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
       }
       
       else if (origin.anchor == 'collaboration' && direction =='down'){
         page = 'contact';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
   		} else if(origin.anchor == 'contact' && direction =='up'){
         page = 'collaboration';
-        console.log(page);
+        checkMenuStatus();
+        //console.log(page);
   		}
 
   	},
@@ -78,28 +90,78 @@ var myFullpage = new fullpage('#fullpage', {
 
       if(origin.anchor == 'introduction'){
         page = 'home';
-        console.log(page);
+        //console.log(page);
   		} else if(origin.anchor == 'case-study-receptiv'){
         page = 'casestudy';
-        console.log(page);
+        //console.log(page);
       } else if(origin.anchor == 'case-study-setf'){
         page = 'casestudy';
-        console.log(page);
+        //console.log(page);
       } else if(origin.anchor == 'capabilities'){
         page = 'capabilities';
-        console.log(page);
+        //console.log(page);
       } else if(origin.anchor == 'character'){
         page = 'character';
-        console.log(page);
+        //console.log(page);
   		} else if(origin.anchor == 'collaboration'){
         page = 'collaboration';
-        console.log(page);
+        //console.log(page);
       } else if(origin.anchor == 'contact'){
         page = 'contact';
-        console.log(page);
+        //console.log(page);
   		}
   	}
 });
+
+function introAni() {
+  gsap.fromTo('.ripple', 5, { autoAlpha:1, scale:.0 }, { delay:.1, autoAlpha:0, scale:4, ease:Power2.easeOut, onComplete:function() {
+    TweenLite.set('.ripple', { background:'none', autoAlpha:0 });
+  } });
+
+  var $quote = $("#creative"),
+    mySplitText = new SplitText($quote, {type:"words"}),
+    splitTextTimeline = new TimelineLite();
+
+  TweenLite.set($quote, {perspective:400}); 
+
+  gsap.set('.hero-content', { delay:.2, opacity:'1' });
+
+  mySplitText.split({type:"words"}) 
+  $(mySplitText.words).each(function(index,el){
+    splitTextTimeline.from($(el), 1.5, { delay:.3, opacity:0, force3D:true}, index * 0.01);
+    splitTextTimeline.from($(el), 1.5, { delay:.3, scale:index % 1.5 == 0  ? 0 : 1.5, ease:Back.easeOut}, index * 0.01); 
+  });
+
+  // gsap.fromTo('.wander', 1.5, { autoAlpha:0 }, { delay:.5, autoAlpha:.4, ease:Power1.easeOut });
+
+  //initWander();
+
+}
+
+function initWander() {
+  // $("#move").click(function() {
+  //   if (wanderTween) {
+  //     wanderTween.kill();
+  //     wanderTween = null;
+  //     gsap.to($box, {duration:0.5, x:0, y:0});
+  //   } else {
+  //     wander();
+  //   }
+  // });
+
+  var $box = $(".wander"),
+      $field = $(".background-wrapper");
+
+  function wander() {
+    var x = (($field.width() - $box.width()) / 2) * (Math.random() * 1.8 - 0.9),
+        y = (($field.height() - $box.height()) / 2) * (Math.random() * 1.4 - 0.7);
+    wanderTween = gsap.to($box, {duration: 5, x:x, y:y, ease:"power1.inOut", onComplete:wander});
+  }
+  
+  setTimeout(function(){ wander() }, 2000);
+  // wander();
+  gsap.fromTo('.wander', .8, { autoAlpha:0 }, { delay:3, autoAlpha:1, ease:Power1.easeOut });
+}
 
 function logoCollapse() {
   gsap.to('.logo-johnathan-mask', { duration:.4, width:'6px', x:-44, ease:Expo.easeOut });
@@ -192,6 +254,12 @@ function menuItemHoverOut(item) {
   }
 }
 
+function checkMenuStatus() {
+  if ( menuClosed == false ) {
+    closeMenu();
+  } 
+}
+
 function showThem() { 
   characterThem.className = "tab";
   characterMe.className = "tab not-selected";
@@ -230,16 +298,3 @@ function anchorCaseStudy() {
 function anchorCaseStudy() {
   window.location.href = '#case-study';
 }
-
-// function skipHero() {
-//   TweenLite.to('#fp-nav', .2, { autoAlpha:0 });
-//   TweenLite.to('.secondary-nav', .2, { delay:.4, background: 'rgba(255, 255, 255, 1)' });
-//   TweenLite.to('.secondary-nav .menu', .2, { delay:.4, color:'#191C23' });
-//   TweenLite.to('.hero-nav-items', .2, { autoAlpha:0 });
-//   window.location.href = '#cbyd';
-// }
-
-// function nextSlide() {
-//   //console.log('click test');
-//   fullpage_api.moveSectionDown();
-// }

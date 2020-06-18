@@ -173,14 +173,28 @@ header {
         header .primary-nav .menu-items button:focus {
           outline: none; }
 
-#fp-nav {
-  display: none !important; }
+.background-wrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh; }
+  .background-wrapper .ripple {
+    position: absolute;
+    background: url(../creative/ripple.png) no-repeat;
+    background-size: cover;
+    width: 960px;
+    height: 900px;
+    margin-left: 220px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0; }
 
 .hero-content {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center; }
+  justify-content: center;
+  opacity: 0; }
   .hero-content .content {
     display: flex;
     width: 100%;
@@ -311,12 +325,6 @@ header {
               right: -48px;
               width: 26px;
               height: 26px; } }
-        .hero-content .content .contact .contact-form .cross {
-          background-color: #ef4f53;
-          background-image: url(https://wayfinder-ux.com/img/contact/close.svg); }
-        .hero-content .content .contact .contact-form .check {
-          background-color: #4ba8f4;
-          background-image: url(https://wayfinder-ux.com/img/contact/checkMark.svg); }
         .hero-content .content .contact .contact-form input {
           color: #1E242B;
           width: 100%;
@@ -358,6 +366,8 @@ header {
           cursor: pointer; }
           .hero-content .content .contact .contact-form button:hover {
             background-size: 100% 50%; }
+          .hero-content .content .contact .contact-form button:focus {
+            outline: none; }
 
 footer {
   display: flex;
