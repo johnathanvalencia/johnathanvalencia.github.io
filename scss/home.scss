@@ -3,39 +3,63 @@
         .intro { position: relative; padding-right: 80px; }
         .case-study { position: relative; width: 536px; 
             h3 { margin-bottom: 56px; }
-            .cta { position: relative; cursor: pointer; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: background-size 0.25s ease-out;
+            .cta { position: relative; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: background-size 0.25s ease-out;
                 &:hover { background-size: 100% 50%; }
+            }
+            .cta-btn { position: relative; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: background-size 0.25s ease-out;
+                &:hover { background-size: 100% 0em; }
             }
         }
         .capabilities { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%;
             .three-split { max-width: 336px; 
                 h3 { margin-top: 8px; }
-                .list { display: flex; flex-direction: column; position: relative; max-width: 288px; margin-top: 32px; 
-                    .list-item { display: flex; flex-direction: row; justify-content: space-between; width: 100%; padding: 16px 0; border-bottom: 2px solid $cloud-grey-color; cursor: pointer; 
+                .gif-wrapper { position: absolute; top: 80px; left: -40px; width: 336px; height: 300px; }
+                .list { display: flex; flex-direction: column; position: relative; max-width: 288px; margin-top: 32px;
+                    .list-item { display: flex; flex-direction: row; justify-content: space-between; position: relative; width: 100%; padding: 16px 0; border-bottom: 2px solid $cloud-grey-color; transition: all 0.25s ease-out;
                         .bullet { opacity: .2; transition: all 0.25s ease-out; }
+                        &:hover { background: #FAFBFE; border-bottom: 2px solid #40ACE4; }
                         &:hover .bullet { opacity:1 }
                     }
+                    .hotspot { position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; }
                 }
             }
         }
         .character { position: relative; width: 100%;
-            .segmented-control { position: relative; padding-bottom: 16px;
+            .segmented-control { display: flex; justify-content: space-between; position: relative; padding-bottom: 16px;
                 .tab { position: relative; margin-right: 40px; cursor: pointer; }
-                // .tab { background-image: linear-gradient(0deg,rgba(30,36,43, 1) 0%,rgba(30,36,43, 1) 100%); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; transition: all 0.25s ease-out; }
                 .tab { background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 100%; background-position: 0 100%; transition: all 0.25s ease-out; }
                 .not-selected { opacity: .5; background-image: linear-gradient(0deg,rgba(64,172,228, 0.20) 0%,rgba(64,172,228, 0.20) 100%); background-repeat: no-repeat; background-size: 100% 0.1em; background-position: 0 100%; transition: all 0.25s ease-out;
                     &:hover { background-size: 100% 50%; opacity: 1; }
+                }
+                #arrows { display: none; position: relative; margin-right: 4px; 
+                    .arrowBox { display: flex; justify-content: center; align-items: center; position: relative; width: 14px; height: 27px; padding: 0 16px; opacity: .5; transition: opacity 0.25s ease-out; cursor: pointer;
+                        img { width: 7px; height: 18px; }
+                        &:hover { opacity: 1; }
+                    }
                 }
             }
             #tabOne { display: block; height: 324px;
                 h3 { padding-top: 40px; }
             }
             #tabTwo { display: none; flex-direction: row; justify-content: space-between; position: relative; width: 200%; height: 324px; padding-top: 40px;
-                .reference { display: flex; flex-direction: row; justify-content: space-between; position: relative; max-width: 360px; height: max-content; background: #FFFFFF; border: 2px solid #E8ECF1; box-shadow: 0 20px 40px -10px #E8ECF1; padding: 28px 22px; }   
+                .reference { display: flex; flex-direction: row; justify-content: space-between; position: relative; max-width: 360px; height: max-content; background: #FFFFFF; border: 2px solid #E8ECF1; box-shadow: 0 20px 40px -10px #E8ECF1; padding: 28px 22px; }
             }
         }
         .collaboration { position: relative;
-            
+            h3:nth-child(3) { padding-top: 32px; }
+            .collaboration-logo-wrapper { position: relative; width: 100%; height: 264px; margin: 20px 0 0 -24px;
+                .collaboration-logos { display: flex; flex-direction: column; align-items: center; align-content: space-around; justify-content: space-between; flex-wrap: wrap; position: absolute; width: 100%; height: 558px;
+                    @include respond-to(tablet) {flex-direction: row; height: auto; padding: 0 24px; }
+                    @include respond-to(desktop-1024) { padding: 0 28px; }
+                    @include respond-to(desktop-1280) {padding: 0; height: 100%; }
+                    img { justify-content: center; max-height: 32px; max-width: 60px; width: auto; margin: 0 16px 40px;
+                        @include respond-to(tablet) { max-height: 48px; max-width: 80px; margin: 0 28px 56px; }
+                        @include respond-to(desktop-1024) { max-height: 64px; max-width: 106px; margin: 0 40px 72px; }
+                        @include respond-to(desktop-1280) { max-height: 48px; max-width: 88px; max-height: 7%; max-width: 10%; margin: 24px 24px 0; /*margin: 0;*/ opacity: 1; transition: opacity 0.25s ease-out; }
+                        &:hover { opacity: 1; }
+                    }
+                }
+            }
         }
         .contact { position: relative;
             .contact-form { width: 400px; padding-top: 24px;

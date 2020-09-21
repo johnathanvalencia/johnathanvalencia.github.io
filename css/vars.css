@@ -14,3 +14,6 @@ body {
   font-size: 18px;
   background-color: #fff;
   margin: 0px; }
+
+:root {
+  cursor: none; }

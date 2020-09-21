@@ -12,14 +12,14 @@
 <header>
   <nav class="primary-nav">
     <div id="myMenu" class="menu-items">
-      <button data-menuanchor="introduction" class="menu-item intro active" onmouseover="menuItemHover('introduction')" onmouseout="menuItemHoverOut('introduction')" onclick="anchor('introduction')">introduction</button>
-      <button data-menuanchor="case-study" class="menu-item case-studies" onmouseover="menuItemHover('casestudies')" onmouseout="menuItemHoverOut('casestudies')" onclick="anchor('casestudies')">case studies</button>
-      <button data-menuanchor="capabilities" class="menu-item capabilities" onmouseover="menuItemHover('capabilities')" onmouseout="menuItemHoverOut('capabilities')"onclick="anchor('capabilities')">capabilities</button>
-      <button class="menu-item character" onmouseover="menuItemHover('character')" onmouseout="menuItemHoverOut('character')" onclick="anchor('character')">character</button>
-      <button class="menu-item collaboration" onmouseover="menuItemHover('collaboration')" onmouseout="menuItemHoverOut('collaboration')" onclick="anchor('collaboration')">collaboration</button>
-      <button class="menu-item contact" onmouseover="menuItemHover('contact')" onmouseout="menuItemHoverOut('contact')" onclick="anchor('contact')">contact</button>
+      <button data-menuanchor="introduction" class="menu-item intro active" onclick="anchor('introduction')">introduction</button>
+      <button data-menuanchor="case-study" class="menu-item case-studies" onclick="anchor('casestudies')">case studies</button>
+      <button data-menuanchor="capabilities" class="menu-item capabilities" onclick="anchor('capabilities')">capabilities</button>
+      <button data-menuanchor="character" class="menu-item character" onclick="anchor('character')">character</button>
+      <button data-menuanchor="collaboration" class="menu-item collaboration" onclick="anchor('collaboration')">collaboration</button>
+      <button data-menuanchor="contact" class="menu-item contact" onclick="anchor('contact')">contact</button>
     </div>
-    <div class="jv-logo" onclick="anchor('introduction')">
+    <div class="jv-logo" onmouseover="cursorHello()" onmouseout="removeCursorHello()" onclick="anchor('introduction')">
       <div class="logo-johnathan-mask">
         <div class="logo-johnathan">
           <svg version="1.1" id="Layer_1" x="0px" y="0px"
@@ -204,7 +204,6 @@
 
   <div class="background-wrapper">
       <div class="ripple"></div>
-      <div class="wander"></div>
   </div>
 
   <div id="fullpage">
@@ -223,7 +222,7 @@
           <div class="case-study">
             <h2>Receptiv</h2>
             <h3>Putting human experience at the center of digital advertising.</h3>
-            <span class="cta">See case study</span>
+            <span onmouseover="cursorBtn()" onmouseout="removeCursorBtn()" class="cta-btn">See case study</span>
           </div>
         </div>
       </div>
@@ -234,7 +233,7 @@
           <div class="case-study">
             <h2>Southeast Toyota Finance</h2>
             <h3>Putting human experience at the center of delinquent accounts.</h3>
-            <span class="cta">See case study</span>
+            <span onmouseover="cursorBtn()" onmouseout="removeCursorBtn()" class="cta-btn">See case study</span>
           </div>
         </div>
       </div>
@@ -244,6 +243,9 @@
         <div class="content">
           <div class="capabilities">
             <div class="three-split">
+              <div class="gif-wrapper">
+                <div id="gifAsset"></div>
+              </div>
               <h2>Capabilities</h2>
             </div>
             <div class="three-split">
@@ -251,18 +253,23 @@
               <div class="list">
                 <div class="list-item">
                   <span>User Research</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('research')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>Product Strategy</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('strategy')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>UX/UI Design</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('ux')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>Product Design</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('design')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>User Testing</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('usertesting')" onmouseout="removeCapabilityGif()"></div>
                 </div>
               </div>
             </div>
@@ -271,18 +278,23 @@
               <div class="list">
                 <div class="list-item">
                   <span>Rapid Prototyping</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('prototyping')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>Front End Development</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('dev')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>UI Animation</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('animation')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>Microinteraction</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('interaction')" onmouseout="removeCapabilityGif()"></div>
                 </div>
                 <div class="list-item">
                   <span>A/B Testing</span><span class="bullet">&bull;</span>
+                  <div class="hotspot" onmouseover="capabilityHover('abtesting')" onmouseout="removeCapabilityGif()"></div>
                 </div>
               </div>
             </div>
@@ -296,8 +308,18 @@
           <div class="character">
             <h2>Character</h2>
             <div class="segmented-control">
-              <span id="characterMe" class="tab" onclick="showMe()">How I think about product</span>
-              <span id="characterThem" class="tab not-selected" onclick="showThem()">What others say about me</span>
+              <div>
+                <span id="characterMe" class="tab" onclick="showMe()">How I think about product</span>
+                <span id="characterThem" class="tab not-selected" onclick="showThem()">What others say about me</span>
+              </div>
+              <div id="arrows">
+                <div id="arrowLeft" class="arrowBox" onclick="swipe('left')">
+                  <img src="creative/angle-left.svg" width="100%" height="auto">
+                </div>
+                <div id="arrowRight" class="arrowBox" onclick="swipe('right')">
+                  <img src="creative/angle-right.svg" width="100%" height="auto">
+                </div>
+              </div>
             </div>
             <div id="tabOne">
               <h3>I help businesses by bringing an empathetic mindset, human-centered methodologies and best practices of a UX process to their challenges.</h3>
@@ -331,8 +353,114 @@
       <div class="hero-content">
         <div class="content">
           <div class="collaboration">
-            <h2>Collaboration and Awards</h2>
+            <h2>Collaboration</h2>
             <h3>Over the last 13 years, I’ve partnered with some world’s leading companies in every industry vertical.</h3>
+            <h3>An informed, uninterrupted, and engaged user = the ultimate KPI.</h3>
+            <div class="collaboration-logo-wrapper">
+              <div id="logosSet1" class="collaboration-logos">
+                <img src="creative/collaboration/activision.png" width="100%" height="auto">
+                <img src="creative/collaboration/adidas.png" width="100%" height="auto">
+                <img src="creative/collaboration/american-express.png" width="100%" height="auto">
+                <img src="creative/collaboration/att.png" width="100%" height="auto">
+                <img src="creative/collaboration/bank-of-america.png" width="100%" height="auto">
+                <img src="creative/collaboration/belvita.png" width="100%" height="auto">
+                <img src="creative/collaboration/bmw.png" width="100%" height="auto">
+                <img src="creative/collaboration/disney.png" width="100%" height="auto">
+                <img src="creative/collaboration/dreamworks.png" width="100%" height="auto">
+                <img src="creative/collaboration/ea-sports.png" width="100%" height="auto">
+                <img src="creative/collaboration/espn.png" width="100%" height="auto">
+                <img src="creative/collaboration/experian.png" width="100%" height="auto">
+                <img src="creative/collaboration/febreze.png" width="100%" height="auto">
+                <img src="creative/collaboration/fox.png" width="100%" height="auto">
+                <img src="creative/collaboration/gap.png" width="100%" height="auto">
+                <img src="creative/collaboration/google.png" width="100%" height="auto">
+                <img src="creative/collaboration/hasbro.png" width="100%" height="auto">
+                <img src="creative/collaboration/hbo.png" width="100%" height="auto">
+                <img src="creative/collaboration/hersheys.png" width="100%" height="auto">
+                <img src="creative/collaboration/honda.png" width="100%" height="auto">
+                <img src="creative/collaboration/hulu.png" width="100%" height="auto">
+                <img src="creative/collaboration/kraft.png" width="100%" height="auto">
+                <img src="creative/collaboration/mcdonalds.png" width="100%" height="auto">
+                <img src="creative/collaboration/microsoft.png" width="100%" height="auto">
+                <img src="creative/collaboration/mtv.png" width="100%" height="auto">
+                <img src="creative/collaboration/nestle.png" width="100%" height="auto">
+                <img src="creative/collaboration/nhl.png" width="100%" height="auto">
+                <img src="creative/collaboration/nintendo.png" width="100%" height="auto">
+                <img src="creative/collaboration/pepsi.png" width="100%" height="auto">
+                <img src="creative/collaboration/rockstar-games.png" width="100%" height="auto">
+                <img src="creative/collaboration/samsung.png" width="100%" height="auto">
+                <img src="creative/collaboration/sony.png" width="100%" height="auto">
+                <img src="creative/collaboration/unilever.png" width="100%" height="auto">
+                <img src="creative/collaboration/viacom.png" width="100%" height="auto">
+                <img src="creative/collaboration/youtube.png" width="100%" height="auto">
+              </div>
+              <div id="logosSet2" class="collaboration-logos">
+                <img src="creative/collaboration/adult-swim.png" width="100%" height="auto">
+                <img src="creative/collaboration/band-aid.png" width="100%" height="auto">
+                <img src="creative/collaboration/belsomra.png" width="100%" height="auto">
+                <img src="creative/collaboration/biotrue.png" width="100%" height="auto">
+                <img src="creative/collaboration/borgota.png" width="100%" height="auto">
+                <img src="creative/collaboration/campbells.png" width="100%" height="auto">
+                <img src="creative/collaboration/dairy-pure.png" width="100%" height="auto">
+                <img src="creative/collaboration/dean-foods.png" width="100%" height="auto">
+                <img src="creative/collaboration/digiorno.png" width="100%" height="auto">
+                <img src="creative/collaboration/discover-channel.png" width="100%" height="auto">
+                <img src="creative/collaboration/disney-xd.png" width="100%" height="auto">
+                <img src="creative/collaboration/doritos.png" width="100%" height="auto">
+                <img src="creative/collaboration/fxx.png" width="100%" height="auto">
+                <img src="creative/collaboration/gillette.png" width="100%" height="auto">
+                <img src="creative/collaboration/gm.png" width="100%" height="auto">
+                <img src="creative/collaboration/godiva.png" width="100%" height="auto">
+                <img src="creative/collaboration/goldfish.png" width="100%" height="auto">
+                <img src="creative/collaboration/ign.png" width="100%" height="auto">
+                <img src="creative/collaboration/johnson-johnson.png" width="100%" height="auto">
+                <img src="creative/collaboration/kfc.png" width="100%" height="auto">
+                <img src="creative/collaboration/leap-frog.png" width="100%" height="auto">
+                <img src="creative/collaboration/lg.png" width="100%" height="auto">
+                <img src="creative/collaboration/mars.png" width="100%" height="auto">
+                <img src="creative/collaboration/maybelline.png" width="100%" height="auto">
+                <img src="creative/collaboration/national-geographic.png" width="100%" height="auto">
+                <img src="creative/collaboration/olay.png" width="100%" height="auto">
+                <img src="creative/collaboration/old-navy.png" width="100%" height="auto">
+                <img src="creative/collaboration/oreo.png" width="100%" height="auto">
+                <img src="creative/collaboration/star-wars.png" width="100%" height="auto">
+                <img src="creative/collaboration/ubisoft.png" width="100%" height="auto">
+                <img src="creative/collaboration/ul.png" width="100%" height="auto">
+                <img src="creative/collaboration/vitas.png" width="100%" height="auto">
+                <img src="creative/collaboration/wb.png" width="100%" height="auto">
+                <img src="creative/collaboration/zynga.png" width="100%" height="auto">
+              </div>
+              <div id="logosSet3" class="collaboration-logos">
+                <img src="creative/collaboration/acuvue.png" width="100%" height="auto">
+                <img src="creative/collaboration/advil.jpg" width="100%" height="auto">
+                <img src="creative/collaboration/brookside.png" width="100%" height="auto">
+                <img src="creative/collaboration/dell.png" width="100%" height="auto">
+                <img src="creative/collaboration/dove.png" width="100%" height="auto">
+                <img src="creative/collaboration/efl.png" width="100%" height="auto">
+                <img src="creative/collaboration/fda.png" width="100%" height="auto">
+                <img src="creative/collaboration/ford.png" width="100%" height="auto">
+                <img src="creative/collaboration/frontline.png" width="100%" height="auto">
+                <img src="creative/collaboration/goodrich.png" width="100%" height="auto">
+                <img src="creative/collaboration/goodwill.png" width="100%" height="auto">
+                <img src="creative/collaboration/hidden-valley.png" width="100%" height="auto">
+                <img src="creative/collaboration/huggies.png" width="100%" height="auto">
+                <img src="creative/collaboration/lionsgate.png" width="100%" height="auto">
+                <img src="creative/collaboration/macys.png" width="100%" height="auto">
+                <img src="creative/collaboration/nickelodeon.png" width="100%" height="auto">
+                <img src="creative/collaboration/novartis.png" width="100%" height="auto">
+                <img src="creative/collaboration/p&g.png" width="100%" height="auto">
+                <img src="creative/collaboration/paramount.png" width="100%" height="auto">
+                <img src="creative/collaboration/playstation.png" width="100%" height="auto">
+                <img src="creative/collaboration/princess-cruises.png" width="100%" height="auto">
+                <img src="creative/collaboration/purina.png" width="100%" height="auto">
+                <img src="creative/collaboration/silk.png" width="100%" height="auto">
+                <img src="creative/collaboration/southeast-toyota-finance.png" width="100%" height="auto">
+                <img src="creative/collaboration/square-enix.png" width="100%" height="auto">
+                <img src="creative/collaboration/t-mobile.png" width="100%" height="auto">
+                <img src="creative/collaboration/verizon.png" width="100%" height="auto">
+                <img src="creative/collaboration/walgreens.png" width="100%" height="auto">
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -368,6 +496,9 @@
       </div>
     </div>
   </div>
+
+  <div id="cursorStyle" class="cursor-dot-outline"></div>
+  <div id="cursorAsset" class="cursor-dot"></div>
 
   <script type="text/javascript" src="js/scrolloverflow.min.js"></script>
   <script type="text/javascript" src="js/fullpage.js"></script>

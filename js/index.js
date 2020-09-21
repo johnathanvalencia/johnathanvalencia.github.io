@@ -4,6 +4,9 @@ var d = document,
     page = 'home',
     characterThem = document.getElementById("characterThem"),
     characterMe = document.getElementById("characterMe");
+    
+gsap.set(["#logosSet2 img", "#logosSet3 img"], { autoAlpha:0, scale:0 });
+arrowRight.style.opacity = "1";
 
 var myFullpage = new fullpage('#fullpage', {
     afterRender: function(){
@@ -44,20 +47,24 @@ var myFullpage = new fullpage('#fullpage', {
       
       else if (origin.anchor == 'case-study-setf' && direction =='down'){
         page = 'capabilities';
+        cursorLaptop();
         checkMenuStatus();
         //console.log(page);	    
   		} else if(origin.anchor == 'capabilities' && direction =='up'){
         page = 'casestudy';
+        removeCursorLaptop();
         checkMenuStatus();
         //console.log(page);
       }
       
       else if (origin.anchor == 'capabilities' && direction =='down'){
         page = 'character';
+        removeCursorLaptop();
         checkMenuStatus();
         //console.log(page);
   		} else if(origin.anchor == 'character' && direction =='up'){
         page = 'capabilities';
+        cursorLaptop();
         checkMenuStatus();
         //console.log(page);
       }
@@ -105,6 +112,7 @@ var myFullpage = new fullpage('#fullpage', {
         //console.log(page);
   		} else if(origin.anchor == 'collaboration'){
         page = 'collaboration';
+        collaborationLogosAni1();
         //console.log(page);
       } else if(origin.anchor == 'contact'){
         page = 'contact';
@@ -132,35 +140,6 @@ function introAni() {
     splitTextTimeline.from($(el), 1.5, { delay:.3, scale:index % 1.5 == 0  ? 0 : 1.5, ease:Back.easeOut}, index * 0.01); 
   });
 
-  // gsap.fromTo('.wander', 1.5, { autoAlpha:0 }, { delay:.5, autoAlpha:.4, ease:Power1.easeOut });
-
-  //initWander();
-
-}
-
-function initWander() {
-  // $("#move").click(function() {
-  //   if (wanderTween) {
-  //     wanderTween.kill();
-  //     wanderTween = null;
-  //     gsap.to($box, {duration:0.5, x:0, y:0});
-  //   } else {
-  //     wander();
-  //   }
-  // });
-
-  var $box = $(".wander"),
-      $field = $(".background-wrapper");
-
-  function wander() {
-    var x = (($field.width() - $box.width()) / 2) * (Math.random() * 1.8 - 0.9),
-        y = (($field.height() - $box.height()) / 2) * (Math.random() * 1.4 - 0.7);
-    wanderTween = gsap.to($box, {duration: 5, x:x, y:y, ease:"power1.inOut", onComplete:wander});
-  }
-  
-  setTimeout(function(){ wander() }, 2000);
-  // wander();
-  gsap.fromTo('.wander', .8, { autoAlpha:0 }, { delay:3, autoAlpha:1, ease:Power1.easeOut });
 }
 
 function logoCollapse() {
@@ -181,17 +160,22 @@ function initMenu() {
   } else if ( hamburger == false ) {
     closeMenu();
   }
+  cursorShow();
 }
 
 function menuHover() {
   if ( menuClosed == true ) {
     gsap.to('.menu .anchor', { duration:.2, x:29, width:'3px', height:'3px', ease:Expo.easeOut });
+    cursorHide();
+    cursorBlow();
   }
 }
 
 function menuHoverOut() {
   if ( menuClosed == true ) {
     gsap.to('.menu .anchor', { duration:.2, x:0, width:'24px', height:'3px', ease:Expo.easeOut });
+    cursorShow();
+    removeCursorBlow();
   }
 }
 
@@ -204,7 +188,7 @@ function openMenu() {
   } });
   gsap.set('.menu-items', { autoAlpha:1 });
   gsap.fromTo(['.menu-items .intro', '.menu-items .case-studies', '.menu-items .capabilities', '.menu-items .character', '.menu-items .collaboration', '.menu-items .contact'], 
-    { perspective:800, transformStyle:"preserve-3d", transformOrigin:'top right', autoAlpha:0, y:100, rotationZ:90, rotationY:90,  x:48 }, { duration: .8, autoAlpha:1, rotationZ:0, y:0, rotationY:0, x:0, stagger: .05, ease:Expo.easeOut }
+    { perspective:800, transformStyle:"preserve-3d", transformOrigin:'top right', autoAlpha:0, y:100, rotationZ:90, rotationY:90, x:48 }, { duration: .8, autoAlpha:1, rotationZ:0, y:0, rotationY:0, x:0, stagger: .05, ease:Expo.easeOut }
   );
 }
 
@@ -220,38 +204,7 @@ function closeMenu() {
     hamburger = true;
     menuClosed = true;
   } });
-}
-
-function menuItemHover(item) {
-  if ( item == 'introduction' ) {
-    gsap.to('.menu-items .intro', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'casestudies' ) {
-    gsap.to('.menu-items .case-studies', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'capabilities' ) {
-    gsap.to('.menu-items .capabilities', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'character' ) {
-    gsap.to('.menu-items .character', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'collaboration' ) {
-    gsap.to('.menu-items .collaboration', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'contact' ) {
-    gsap.to('.menu-items .contact', { duration:.2, color: '#ffffff', background: '#40ACE4', boxShadow: '0 16px 32px -8px rgba(64,172,228,0.35)', ease:Expo.easeOut });
-  }
-}
-
-function menuItemHoverOut(item) {
-  if ( item == 'introduction' ) {
-    gsap.to('.menu-items .intro', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'casestudies' ) {
-    gsap.to('.menu-items .case-studies', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'capabilities' ) {
-    gsap.to('.menu-items .capabilities', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'character' ) {
-    gsap.to('.menu-items .character', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'collaboration' ) {
-    gsap.to('.menu-items .collaboration', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  } else if ( item == 'contact' ) {
-    gsap.to('.menu-items .contact', { duration:.2, color: '#1E242B', background: '#ffffff', boxShadow: '0 16px 32px -8px rgba(146,166,191,0.35)', ease:Expo.easeOut });
-  }
+  removeCursorBlow();
 }
 
 function checkMenuStatus() {
@@ -265,6 +218,7 @@ function showThem() {
   characterMe.className = "tab not-selected";
   tabOne.style.display = 'none';
   tabTwo.style.display = 'flex';
+  arrows.style.display = 'flex';
 }
 
 function showMe() { 
@@ -272,6 +226,15 @@ function showMe() {
   characterMe.className = "tab";
   tabOne.style.display = 'block';
   tabTwo.style.display = 'none';
+  arrows.style.display = 'none';
+}
+
+function swipe(item) {
+  if (item === 'right') {
+    gsap.to('#tabTwo', { duration:.4, left:'-101.4%', ease:'expo.out' });
+  } else if (item === 'left') {
+    gsap.to('#tabTwo', { duration:.4, left:'0', ease:'expo.out' });
+  }
 }
 
 function anchor(item) {
@@ -295,6 +258,314 @@ function anchorCaseStudy() {
   window.location.href = '#case-study';
 }
 
-function anchorCaseStudy() {
-  window.location.href = '#case-study';
+function capabilityHover(item) {
+  var gifAsset;
+  gifAsset = d.getElementById('gifAsset');
+  if (item === 'research'){
+    gifAsset.style.background = 'url(creative/gifs/user-research.gif) no-repeat';
+  } else if (item === 'strategy'){
+    gifAsset.style.background = 'url(creative/gifs/product-strategy-3.gif) no-repeat';
+  } else if (item === 'ux'){
+    gifAsset.style.background = 'url(creative/gifs/ux-ui-design.gif) no-repeat';
+  } else if (item === 'design'){
+    gifAsset.style.background = 'url(creative/gifs/product-design-3.gif) no-repeat';
+  } else if (item === 'usertesting'){
+    gifAsset.style.background = 'url(creative/gifs/user-testing.gif) no-repeat';
+  } else if (item === 'prototyping'){
+    gifAsset.style.background = 'url(creative/gifs/rapid-prototyping-2.gif) no-repeat';
+  } else if (item === 'dev'){
+    gifAsset.style.background = 'url(creative/gifs/front-end-dev.gif) no-repeat';
+  } else if (item === 'animation'){
+    gifAsset.style.background = 'url(creative/gifs/ui-animation-3.gif) no-repeat';
+  } else if (item === 'interaction'){
+    gifAsset.style.background = 'url(creative/gifs/micro-interaction.gif) no-repeat';
+  } else if (item === 'abtesting'){
+    gifAsset.style.background = 'url(creative/gifs/ab-testing.gif) no-repeat';
+  } 
+  gifAsset.style.backgroundSize = 'contain';
+  gifAsset.style.width = '100%';
+  gifAsset.style.height = '100%';
+  var xNumber = randomNumber(-320,320);
+  var yNumber = randomNumber(-320,320);
+  var rotationNumber = randomNumber(-180,180);
+  gsap.fromTo('#gifAsset', { autoAlpha:0, x:xNumber, y:yNumber, rotation:rotationNumber }, { duration:.4, autoAlpha:1, x:0, y:0, rotation:0, ease:Expo.easeOut });
+}
+
+function randomNumber(min, max) {  
+  return Math.random() * (max - min) + min; 
+} 
+
+function removeCapabilityGif() {
+  var gifAsset = d.getElementById('gifAsset');
+  gifAsset.style.background = 'none';
+}
+
+// function intro() {
+// 	var tl = gsap.timeline();
+// 	//...add animations here...
+// 	return tl;
+// }
+
+// function middle() {
+// 	var tl = gsap.timeline();
+// 	//...add animations here...
+// 	return tl;
+// }
+
+// function conclusion() {
+// 	var tl = gsap.timeline();
+// 	//...add animations here...
+// 	return tl;
+// }
+
+// // stitch them together in a master timeline...
+// var master = gsap.timeline();
+// master.add(intro())
+//       .add(middle(), "+=2")     //with a gap of 2 seconds
+//       .add(conclusion(), "-=1") //overlap by 1 second
+
+// Cursor Functions
+function collaborationLogosAni1() { 
+  tl = gsap.timeline({defaults: {duration: 1, ease: "expo.out"}, repeat: -1, paused:true});
+    tl.to("#logosSet1 img", { duration: 1, autoAlpha:0, scale: 0, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 2)
+    tl.to("#logosSet2 img", { duration: 1, autoAlpha:1, scale: 1, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 2)
+    tl.to("#logosSet2 img", { duration: 1, autoAlpha:0, scale: 0, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 4)
+    tl.to("#logosSet3 img", { duration: 1, autoAlpha:1, scale: 1, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 4)
+    tl.to("#logosSet3 img", { duration: 1, autoAlpha:0, scale: 0, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 6)
+    tl.to("#logosSet1 img", { duration: 1, autoAlpha:1, scale: 1, ease: "expo.out", stagger: { grid: "auto", from: "start", amount: .4 } }, 6);
+}
+
+var cursor = {
+  delay: 6,
+  _x: 0,
+  _y: 0,
+  endX: (window.innerWidth / 2),
+  endY: (window.innerHeight / 2),
+  cursorVisible: true,
+  cursorEnlarged: false,
+  $dot: document.querySelector('.cursor-dot'),
+  $outline: document.querySelector('.cursor-dot-outline'),
+  
+  init: function() {
+      // Set up element sizes
+      this.dotSize = this.$dot.offsetWidth;
+      this.outlineSize = this.$outline.offsetWidth;
+      
+      this.setupEventListeners();
+      this.animateDotOutline();
+  },
+  
+//     updateCursor: function(e) {
+//         var self = this;
+      
+//         console.log(e)
+      
+//         // Show the cursor
+//         self.cursorVisible = true;
+//         self.toggleCursorVisibility();
+
+//         // Position the dot
+//         self.endX = e.pageX;
+//         self.endY = e.pageY;
+//         self.$dot.style.top = self.endY + 'px';
+//         self.$dot.style.left = self.endX + 'px';
+//     },
+  
+  setupEventListeners: function() {
+      var self = this;
+      
+      // Anchor hovering
+      document.querySelectorAll('a').forEach(function(el) {
+          el.addEventListener('mouseover', function() {
+              self.cursorEnlarged = true;
+              self.toggleCursorSize();
+          });
+          el.addEventListener('mouseout', function() {
+              self.cursorEnlarged = false;
+              self.toggleCursorSize();
+          });
+      });
+      
+      // Click events
+      document.addEventListener('mousedown', function() {
+          self.cursorEnlarged = true;
+          self.toggleCursorSize();
+      });
+      document.addEventListener('mouseup', function() {
+          self.cursorEnlarged = false;
+          self.toggleCursorSize();
+      });
+
+
+      document.addEventListener('mousemove', function(e) {
+          // Show the cursor
+          self.cursorVisible = true;
+          self.toggleCursorVisibility();
+
+          // Position the dot
+          self.endX = e.pageX;
+          self.endY = e.pageY;
+          self.$dot.style.top = self.endY + 'px';
+          self.$dot.style.left = self.endX + 'px';
+      });
+      
+      // Hide/show cursor
+      document.addEventListener('mouseenter', function(e) {
+          self.cursorVisible = true;
+          self.toggleCursorVisibility();
+          self.$dot.style.opacity = 1;
+          self.$outline.style.opacity = 1;
+      });
+      
+      document.addEventListener('mouseleave', function(e) {
+          self.cursorVisible = true;
+          self.toggleCursorVisibility();
+          self.$dot.style.opacity = 0;
+          self.$outline.style.opacity = 0;
+      });
+  },
+  
+  animateDotOutline: function() {
+      var self = this;
+      
+      self._x += (self.endX - self._x) / self.delay;
+      self._y += (self.endY - self._y) / self.delay;
+      self.$outline.style.top = self._y + 'px';
+      self.$outline.style.left = self._x + 'px';
+      
+      requestAnimationFrame(this.animateDotOutline.bind(self));
+  },
+  
+  toggleCursorSize: function() {
+      var self = this;
+      
+      if (self.cursorEnlarged) {
+          self.$dot.style.transform = 'translate(-50%, -50%) scale(0.75)';
+          self.$outline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+      } else {
+          self.$dot.style.transform = 'translate(-50%, -50%) scale(1)';
+          self.$outline.style.transform = 'translate(-50%, -50%) scale(1)';
+      }
+  },
+  
+  toggleCursorVisibility: function() {
+      var self = this;
+      
+      if (self.cursorVisible) {
+          self.$dot.style.opacity = 1;
+          self.$outline.style.opacity = 1;
+      } else {
+          self.$dot.style.opacity = 0;
+          self.$outline.style.opacity = 0;
+      }
+  }
+}
+
+cursor.init();
+
+function cursorHello() {
+  var element, name, arr;
+  element = document.getElementById("cursorAsset");
+  name = "cursor-hello";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function removeCursorHello() {
+  element = document.getElementById("cursorAsset");
+  element.className = element.className.replace(/\bcursor-hello\b/g, "");
+}
+
+function cursorBtn() {
+  var element, name, arr;
+  element = document.getElementById("cursorStyle");
+  name = "cursor-outline-btn";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+  cursorHide();
+}
+
+function removeCursorBtn() {
+  element = document.getElementById("cursorStyle");
+  element.className = element.className.replace(/\bcursor-outline-btn\b/g, "");
+  cursorShow();
+}
+
+function cursorArrowRight() {
+  var element, name, arr;
+  element = document.getElementById("cursorAsset");
+  name = "cursor-arrow-right";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function removeCursorArrowRight() {
+  element = document.getElementById("cursorAsset");
+  element.className = element.className.replace(/\bcursor-arrow-right\b/g, "");
+}
+
+function cursorEye() {
+  var element, name, arr;
+  element = document.getElementById("cursorAsset");
+  name = "cursor-eye";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function removeCursorEye() {
+  element = document.getElementById("cursorAsset");
+  element.className = element.className.replace(/\bcursor-eye\b/g, "");
+}
+
+function cursorBlow() {
+  var element, name, arr;
+  element = document.getElementById("cursorStyle");
+  name = "cursor-outline-blow";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function removeCursorBlow() {
+  element = document.getElementById("cursorStyle");
+  element.className = element.className.replace(/\bcursor-outline-blow\b/g, "");
+}
+
+function cursorLaptop() {
+  var element, name, arr;
+  element = document.getElementById("cursorAsset");
+  name = "cursor-laptop";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function removeCursorLaptop() {
+  element = document.getElementById("cursorAsset");
+  element.className = element.className.replace(/\bcursor-laptop\b/g, "");
+}
+
+function cursorHide() {
+  var element, name, arr;
+  element = document.getElementById("cursorAsset");
+  name = "cursor-hide";
+  arr = element.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    element.className += " " + name;
+  }
+}
+
+function cursorShow() {
+  element = document.getElementById("cursorAsset");
+  element.className = element.className.replace(/\bcursor-hide\b/g, "");
 }

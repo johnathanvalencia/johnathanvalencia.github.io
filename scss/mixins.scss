@@ -31,7 +31,7 @@
       @content;
     }
   }
-  @else if $breakpoint == "tablet-w" {
+  @else if $breakpoint == "tablet" {
     @media (min-width: 768px) {
       @content;
     }
