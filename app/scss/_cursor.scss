@@ -1,0 +1,36 @@
+#circle {
+    position: fixed;
+    z-index: 5;
+    $size: 12px; width: $size; height: $size;
+    background-color: #40ACE4;
+    border-radius: 50%;
+    pointer-events: none;
+    transition:
+      background ease-in 10ms,
+      box-shadow ease-in 150ms,
+      transform ease-in 150ms;
+    /* promote it to its own layer to enable  hardware accelerated rendering: */
+    transform: translate3d(0, 0, 0);
+}
+
+.cursor-dot, .cursor-dot-outline { pointer-events: none; position: absolute; top: 50%; left: 50%; border-radius: 50%; opacity: 0; transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out, background-color 0.3s ease-out;
+    z-index: 99999999999;
+}
+
+.cursor-dot { $size: 0px; width: $size; height: $size; background-color: #40ACE4; }
+
+.cursor-dot-outline { $size: 56px; width: $size; height: $size; border: 2px solid #40ACE4; }
+
+.cursor-hello { background: url(../app/creative/hand.svg) no-repeat; background-size: cover; width: 22px; height: 23px; margin-top: -11px; margin-left: -11px; -webkit-animation:loopHand .9s linear infinite; animation:loopHand .8s linear infinite; transform-origin:right bottom; will-change:transform }
+@-webkit-keyframes loopHand{0%{transform:rotate(0deg)}25%{transform:rotate(10deg)}75%{transform:rotate(-10deg)}to{transform:rotate(0deg)}}
+@keyframes loopHand{0%{transform:rotate(0deg)}25%{transform:rotate(10deg)}75%{transform:rotate(-10deg)}to{transform:rotate(0deg)}}#ht__cursor #cursor--lerp-text{white-space:nowrap;top:calc(50% - 10px);position:absolute;will-change:transform}
+
+.cursor-hide { width: 0px !important; height: 0px !important; }
+.cursor-outline-btn { width: 184px; height: 60px; border-radius: 8px; }
+.cursor-outline-blow { width: 80px; height: 80px; opacity: 0 !important; }
+.cursor-eye { background: url(../app/creative/eye.svg) no-repeat; background-size: contain; width: 24px; height: 16px; }
+.cursor-arrow-right { background: url(../app/creative/arrow-right.svg) no-repeat; background-size: contain; width: 18px; height: 18px; }
+.cursor-long-arrow-right { background: url(../app/creative/long-arrow-right.svg) no-repeat; background-size: contain; width: 21px; height: 14px; }
+.cursor-laptop { background: url(../app/creative/laptop.png) no-repeat; background-size: contain; width: 24px; height: 24px; border-radius: 0; }
+

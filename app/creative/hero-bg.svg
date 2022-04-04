@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="776px" viewBox="0 0 1440 776" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>download</title>
+    <defs>
+        <linearGradient x1="69.115%" y1="64.501%" x2="0%" y2="35.499%" id="linearGradient-1">
+            <stop stop-color="#ECF3FF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Introduction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.800000012">
+        <g transform="translate(0.000000, 18.000000)" fill="url(#linearGradient-1)" id="download">
+            <g transform="translate(0.000000, -18.000000)">
+                <path d="M1440,577.5 L865.950173,577.486532 C621.366661,583.540492 530.506801,775.5 284.167239,775.5 L0,775.5 L0,775.5 L0,0 L1440,0 L1440,577.5 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
