@@ -1,22 +1,12 @@
-#circle {
-    position: fixed;
-    z-index: 5;
-    $size: 12px; width: $size; height: $size;
-    background-color: #40ACE4;
-    border-radius: 50%;
-    pointer-events: none;
-    transition:
-      background ease-in 10ms,
-      box-shadow ease-in 150ms,
-      transform ease-in 150ms;
-    /* promote it to its own layer to enable  hardware accelerated rendering: */
-    transform: translate3d(0, 0, 0);
+#circle { visibility: hidden; position: fixed; z-index: 5; $size: 12px; width: $size; height: $size; background-color: #40ACE4; border-radius: 50%; pointer-events: none; transition: background ease-in 10ms, box-shadow ease-in 150ms, transform ease-in 150ms; transform: translate3d(0, 0, 0); 
+  @include respond-to(desktop-1024) { visibility: visible; }
 }
 
-.cursor-dot, .cursor-dot-outline { pointer-events: none; position: absolute; top: 50%; left: 50%; border-radius: 50%; opacity: 0; transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease-out, transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out, background-color 0.3s ease-out;
-    z-index: 99999999999;
+.cursor-wrap { visibility: hidden; 
+  @include respond-to(desktop-1024) { visibility: visible; }
 }
+
+.cursor-dot, .cursor-dot-outline { pointer-events: none; position: absolute; top: 50%; left: 50%; border-radius: 50%; opacity: 0; transform: translate(-50%, -50%); transition: opacity 0.3s ease-out, transform 0.3s ease-out, width 0.3s ease-out, height 0.3s ease-out, border-radius 0.3s ease-out, background-color 0.3s ease-out; z-index: 99999999999; }
 
 .cursor-dot { $size: 0px; width: $size; height: $size; background-color: #40ACE4; }
 
@@ -33,4 +23,3 @@
 .cursor-arrow-right { background: url(../app/creative/arrow-right.svg) no-repeat; background-size: contain; width: 18px; height: 18px; }
 .cursor-long-arrow-right { background: url(../app/creative/long-arrow-right.svg) no-repeat; background-size: contain; width: 21px; height: 14px; }
 .cursor-laptop { background: url(../app/creative/laptop.png) no-repeat; background-size: contain; width: 24px; height: 24px; border-radius: 0; }
-

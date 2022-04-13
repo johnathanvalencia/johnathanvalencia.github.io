@@ -1,0 +1,338 @@
+.page-case-study-setf {
+    .landing { width: 100%;
+        .hero { display: flex; flex-direction: column; align-items: flex-start;
+            .category { position: relative; font-size: 18px; font-weight: 500; color: #6B727D; padding-bottom: 16px; }
+            h1 { max-width: 656px; }
+        }
+        .fin { display: flex; flex-direction: column; align-items: flex-start;
+            .category { position: relative; font-size: 18px; font-weight: 500; color: #6B727D; padding-bottom: 16px; }
+            h1 { max-width: 878px; }
+        }
+    }
+    $section-spacing: 144px;
+    .content { margin-top: 80px;
+        @include respond-to(tablet) { margin-top: 120px; }
+        @include respond-to(desktop-1280) { padding: 0 56px; margin-top: $section-spacing; }
+        @include respond-to(desktop-1366) { padding: 0; }
+    }
+    h3 { font-weight: 500; }
+    p { line-height: 32px; }
+    .section-role { background: #FAFAFA; margin-top: 80px;
+        @include respond-to(desktop-1366) { margin-top: $section-spacing; }
+        .content { margin-top: 0; }
+    }
+    .section-architecture { background: #FAFAFA; margin-top: 0;
+        .content { margin-top: 0; }
+    }
+    .setf_case-study {
+        &_research, &_ux-strategy { position: relative; width: 100%;
+            h4 { max-width: 760px; padding: 24px 0 56px; }
+        }
+        &_hypothesis { position: relative; width: 100%;
+            h3 { padding-bottom: 32px; }
+        }
+        &_insights { position: relative; width: 100%;
+            h4 { font-weight: 500; padding-bottom: 32px; }
+        }
+        &_ux-strategy { position: relative; 
+            ul { color: var(--dark-color); max-width: 596px;
+                li { padding-bottom: 32px; line-height: 32px;
+                    &::before { display: none; position: absolute; left: -16px; color: var(--setf-red); font-weight: 600; 
+                        @include respond-to(desktop-1280) { display: block; left: -24px; }
+                    }
+                    &:first-child {
+                        &:before { content: '1.'; }
+                    }
+                    &:nth-child(2) {
+                        &:before { content: '2.'; }
+                    }
+                    &:last-child { padding-bottom: 0; }
+                    span { color: var(--setf-red); font-weight: 600; }
+                }
+            }
+        }
+        &_customer-strategy { position: relative; width: 100%;
+            h3 { padding-bottom: 40px; 
+                @include respond-to(desktop-1280) { padding-bottom: 56px; }
+            }
+        }
+        &_customer-solution { position: relative; width: 100%;
+            h3 { padding-bottom: 32px; }
+        }
+        &_architecture { position: relative; width: 100%;
+            h4 { padding-bottom: 32px; font-weight: 500; 
+                @include respond-to(desktop-1280) { padding-bottom: 56px; }
+            }
+        }
+        &_design { position: relative; width: 100%;
+            h3 { padding-bottom: 32px; }
+            p { 
+                @include respond-to(desktop-1024) { max-width: 596px; }
+            }
+        }
+        &_experience { position: relative; width: 100%;
+            h4 { padding-bottom: 32px; font-weight: 500; }
+            .img-wrapper { position: relative; width: 100%; height: auto; vertical-align: top; overflow: hidden; border-radius: 8px; padding-top: 48px;
+                @include respond-to(desktop-1280) { padding-top: 56px; }
+                .img { position: relative; top: 0px; left: 0px; width: 100%; height: auto; overflow: hidden; border-radius: 8px;
+                    img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; overflow: hidden; }
+                }
+            }
+        }
+        &_results { position: relative; width: 100%;
+            h3 { padding-bottom: 32px; }
+            p {  
+                @include respond-to(desktop-1024) { max-width: 596px; }
+            }
+        }
+        &_impact { position: relative; width: 100%;
+            h3 { padding-bottom: 32px; }
+            p { padding-bottom: 32px;
+                @include respond-to(desktop-1024) { max-width: 596px; }
+                &:last-child { padding-bottom: 0; }
+            }
+            .img-wrapper { position: relative; width: 100%; height: auto; vertical-align: top; overflow: hidden; border-radius: 8px; padding-top: 56px;
+                .img { position: relative; top: 0px; left: 0px; width: 100%; height: auto; overflow: hidden; border-radius: 8px;
+                    img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; overflow: hidden; }
+                }
+            }
+        }
+    }
+    .cards_case-study {
+        &_intro { display: flex; flex-direction: column; position: relative; width: 100%;
+            .card { display: flex; flex-direction: column-reverse; justify-content: space-between; width: 100%; margin-bottom: 64px;
+                @include respond-to(desktop-1280) { flex-direction: row; }
+                .info { position: relative; max-width: 100%; padding-top: 40px;
+                    @include respond-to(desktop-1024) { max-width: 596px; }
+                    @include respond-to(desktop-1280) { max-width: 536px; padding-top: 0; }
+                    @include respond-to(desktop-1366) { max-width: 596px; }
+                    .setf-logo { width: 100%; max-width: 237px; height: auto; margin: 0; }
+                    h3 { padding-bottom: 0; }
+                    p { padding-top: 32px; }
+                }
+                .img-wrapper { position: relative; max-width: 100%; height: auto; vertical-align: top; overflow: hidden; border-radius: 8px;
+                    @include respond-to(desktop-1280) { max-width: 536px; }
+                    @include respond-to(desktop-1366) { max-width: 596px; }
+                    .img { position: relative; top: 0px; left: 0px; width: 100%; height: 220px; overflow: hidden;
+                        @include respond-to(tablet) { height: 400px; }
+                        @include respond-to(desktop-1024) { height: 640px; }
+                        @include respond-to(desktop-1280) { height: 400px; }
+                        img { width: 100%; height: 100%; object-fit: cover; }
+                    }
+                }
+                &:nth-child(even) { 
+                    @include respond-to(desktop-1280) { flex-direction: row-reverse; }
+                }
+                &:last-child { margin-bottom: 0; }
+            }
+        }
+        &_role { display: flex; flex-direction: column; position: relative; justify-content: space-between; padding: 72px 0 80px; width: 100%;
+            @include respond-to(desktop-1024) { flex-direction: row; }
+            .card { position: relative; width: 100%;  
+                @include respond-to(desktop-1024) { width: 596px; }
+                @include respond-to(desktop-1280) { width: 536px; }
+                @include respond-to(desktop-1366) { width: 596px; }
+                .card-body { position: relative;
+                    @include respond-to(desktop-1024) { max-width: 408px; }
+                    h4 { font-weight: 500; }
+                    ul { position: relative; padding-top: 32px;
+                        li { line-height: 32px;
+                            &:first-child { font-weight: 600; color: var(--dark-color); padding-bottom: 4px; }
+                            &:not(:first-child) {  
+                                &:before { position: absolute; content:'\2022'; left: -12px; 
+                                    @include respond-to(desktop-1280) { left: -16px; }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:first-child { padding-bottom: 56px;
+                    @include respond-to(desktop-1280) { padding-bottom: 0; }
+                }
+            }
+        }
+        &_traditional-collections-method { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
+            @include respond-to(tablet) { flex-direction: row; }
+            .card { position: relative; width: 100%;
+                @include respond-to(tablet) { width: 328px; }
+                @include respond-to(desktop-1024) { width: 440px; }
+                @include respond-to(desktop-1280) { width: 536px; }
+                @include respond-to(desktop-1366) { width: 596px; }
+                .category { position: relative; font-size: 18px; font-weight: 500; color: #6B727D; padding-bottom: 32px; }
+                .img-wrapper { position: relative; width: 100%; height: auto; vertical-align: top; overflow: hidden; border-radius: 8px;
+                    @include respond-to(desktop-1280) { width: 338px; }
+                    .img { position: relative; top: 0px; left: 0px; width: 100%; height: 220px; overflow: hidden; border-radius: 8px;
+                        img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; overflow: hidden; }
+                    }
+                }
+                .gif-wrapper { position: relative; width: 100%; height: 220px; background: #E8ECF1; margin-top: 32px; border-radius: 8px; overflow: hidden;
+                    @include respond-to(desktop-1280) { width: 338px; }
+                    img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; overflow: hidden; }
+                }
+                &:first-child { padding-bottom: 56px;
+                    @include respond-to(desktop-1280) { padding-bottom: 0; }
+                }
+            }
+        }
+        &_insights { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
+            @include respond-to(desktop-1024) { flex-direction: row; }
+            .card { position: relative; width: 100%;  
+                @include respond-to(desktop-1024) { width: 440px; }
+                @include respond-to(desktop-1280) { width: 536px; }
+                @include respond-to(desktop-1366) { width: 596px; }
+                ul { position: relative; 
+                    li { line-height: 32px; max-width: 480px; color: var(--dark-color); padding-bottom: 28px;
+                        &:before { position: absolute; content:'\2022'; left: -12px; color: var(--setf-red); 
+                            @include respond-to(desktop-1280) { left: -16px; }
+                        }
+                        &:last-child { padding-bottom: 0; }
+                    }
+                }
+                &:first-child { padding-bottom: 28px;
+                    @include respond-to(desktop-1024) { padding-bottom: 0; }
+                }
+            }
+        }
+        &_hypothesis { display: flex; flex-direction: row; flex-wrap: wrap; position: relative; justify-content: space-between; width: 100%;
+            .card { position: relative; width: 100%; padding: 24px; background: #FAFAFA; border-radius: 8px; margin-bottom: 32px; 
+                @include respond-to(tablet) { width: 328px; }
+                @include respond-to(desktop-1024) { width: 440px; }
+                @include respond-to(desktop-1280) { width: 536px; margin-bottom: 48px; }
+                @include respond-to(desktop-1366) { width: 596px; padding: 40px 32px; margin-bottom: 56px; }
+            }
+        }
+        &_goals { display: flex; flex-direction: column; position: relative; justify-content: space-between; padding-top: 8px;
+            @include respond-to(tablet) { flex-direction: row; padding-top: 16px; }
+            .card { display: flex; flex-direction: column; align-items: center; position: relative; max-width: 100%; padding: 40px 72px 44px; border: 1px solid #E5E5E5; border-radius: 8px; margin-bottom: 40px;
+                @include respond-to(tablet) { max-width: 220px; padding: 40px 16px 44px; margin-bottom: 0; }
+                @include respond-to(desktop-1024) { max-width: 288px; }
+                @include respond-to(desktop-1280) { max-width: 352px; padding: 40px 72px 44px; }
+                @include respond-to(desktop-1366) { max-width: 380px; }
+                img { width: 100%; max-width: 88px; height: auto; margin: 0; }
+                h4 { font-weight: 500; color: var(--setf-red); padding: 20px 0 16px; }
+                p { line-height: 24px; text-align: center; }
+                &:last-child { margin-bottom: 0; }
+            }
+        }
+        &_customer-outreach { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
+            @include respond-to(desktop-1280) { flex-direction: row; }
+            .strategy, .info { position: relative; width: 100%;  
+                @include respond-to(desktop-1280) { max-width: 536px; }
+                @include respond-to(desktop-1366) { max-width: 596px; }
+            }
+            .cards_case-study_goals { flex-direction: row; flex-wrap: wrap; position: relative; padding-top: 0; padding-bottom: 32px;
+                @include respond-to(desktop-1280) { padding-bottom: 0; }
+                .card { width: 100%; max-width: 48%; padding: 24px 0 28px; margin-bottom: 16px;
+                    @include respond-to(tablet) { max-width: 30%; }
+                    @include respond-to(desktop-1280) { max-width: 160px; margin-bottom: 40px; }
+                    @include respond-to(desktop-1366) { max-width: 184px; }
+                    h4 { padding: 8px 0 0; }
+                }
+            }
+            .info {  
+                .card { padding-bottom: 56px; 
+                    &:last-child { padding-bottom: 0; }
+                }
+                h4 { font-weight: 500; padding-bottom: 24px; }
+                p {
+                    @include respond-to(desktop-1024) { max-width: 596px; }
+                }
+            }
+        }
+        &_solution { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
+            @include respond-to(desktop-1280) { flex-direction: row; }
+            .info, .img-wrapper { position: relative; width: 100%; 
+                @include respond-to(desktop-1280) { max-width: 536px; }
+                @include respond-to(desktop-1366) { max-width: 596px; }
+            }
+            .info {
+                p { padding-bottom: 32px;
+                    &:last-child() { padding-bottom: 0; }
+                    @include respond-to(desktop-1024) { max-width: 596px; }
+                }
+            }
+            .img-wrapper { padding-top: 8px;
+                @include respond-to(desktop-1280) { padding-top: 0; }
+                img { border-radius: 8px; overflow: hidden; }
+            }
+        }
+        &_architecture { display: flex; flex-direction: column; align-items: center; width: 100%; padding: 56px 0;
+            h4 { font-weight: 500; color: var(--setf-red); }
+            img { width: 100%; max-width: 980px; height: auto; margin: 32px 0; }
+        }
+        &_experience { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
+            @include respond-to(desktop-1280) { flex-direction: row; }
+            .card { position: relative; width: 100%;  
+                @include respond-to(desktop-1280) { max-width: 536px; }
+                @include respond-to(desktop-1366) { max-width: 596px; }
+                &:not(:first-child) { padding-top: 32px;
+                    @include respond-to(desktop-1280) { padding-top: 0; }
+                }
+                p { 
+                    @include respond-to(desktop-1024) { max-width: 596px; }
+                }
+            }
+        }
+        &_results { display: flex; flex-direction: column; flex-wrap: wrap; position: relative; justify-content: space-between; width: 100%; padding-top: 48px;
+            @include respond-to(tablet) { flex-direction: row;  }
+            @include respond-to(desktop-1280) { padding-top: 56px; }
+            .card { display: flex; flex-direction: column; align-items: flex-start; position: relative; width: 100%; padding: 32px 32px 24px; border: 1px solid #E5E5E5; border-radius: 8px; margin-bottom: 40px; 
+                @include respond-to(tablet) { max-width: 332px; }
+                @include respond-to(desktop-1024) { margin-bottom: 0; max-width: 296px; }
+                @include respond-to(desktop-1280) { max-width: 356px; }
+                @include respond-to(desktop-1366) { max-width: 380px; }
+                & > h4 { font-weight: 500; color: var(--setf-red); }
+                p { line-height: 24px; text-align: center; }
+                .data-point { position: relative; padding-top: 32px;
+                    h4 { font-weight: 500; color: #004A64; }
+                    &.digital {
+                        h4 { color: #00A7E1; }
+                    }
+                }
+                hr { border: 0; width: 100%; height: 1px; background: #E5E5E5; margin: 40px 0 24px; }
+                &:last-child { margin-bottom: 0; }
+            }
+        }
+        &_redesign { display: flex; flex-direction: row; position: relative; width: 100%; padding-top: 24px;
+            .card { position: relative;
+                &:first-child { margin-left: 0.8%; margin-right: 18.7%; }
+                &:nth-child(2) { margin-right: 13%; }
+            }
+            p { line-height: 24px; max-width: auto; padding-bottom: 0;
+                &.strong { font-weight: 500; }
+            }
+        }
+    }
+    .drop-knowledge { position: relative; width: 100%; border-radius: 8px; background: rgba(#4AB7FF, .16); padding: 32px 24px; margin: 0 auto;
+        @include respond-to(tablet) { max-width: 520px; padding: 48px 40px; }
+        @include respond-to(desktop-1024) {max-width: 692px; }
+        .category { position: relative; font-size: 18px; font-weight: 500; color: #6B727D; padding-bottom: 8px; }
+        .info { position: relative; padding-top: 32px;
+            p {
+                &.strong { font-weight: 600; }
+                &:last-child { padding-top: 32px; }
+                sup { position: relative; color: #4AB7FF; color: var(--setf-red); font-size: 14px; padding: 0 2px; vertical-align: top; top: -4px; }
+            }
+        }
+        hr { position: relative; margin: 40px 0; border: 0; width: 100%; height: 1px;  background: rgba(#4AB7FF, .32); }
+        .resources { position: relative;
+            ul { position: relative; font-size: 16px;
+                li { position: relative;
+                    &::before { position: absolute; left: -12px; font-size: 12px; color: var(--setf-red); 
+                        @include respond-to(tablet) { left: -14px; }
+                    }
+                }
+                li:first-child { 
+                    &:before { content: '1' }
+                }
+                li:nth-child(2) { 
+                    &:before { content: '2' }
+                }
+                li:not(:first-child) { padding-top: 8px; }
+                a {
+                    &:hover { text-decoration: underline; color: #4AB7FF; }
+                }
+            }
+        }
+    }
+}
