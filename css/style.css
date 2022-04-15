@@ -2340,6 +2340,16 @@ section.full-height .content {
   }
 }
 
+.page-case-study-setf .cards_case-study_role.receptiv .card-body {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .page-case-study-setf .cards_case-study_role.receptiv .card-body {
+    max-width: 488px;
+  }
+}
+
 .page-case-study-setf .cards_case-study_traditional-collections-method {
   display: -webkit-box;
   display: -ms-flexbox;

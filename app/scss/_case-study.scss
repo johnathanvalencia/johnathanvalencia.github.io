@@ -150,6 +150,11 @@
                     @include respond-to(desktop-1280) { padding-bottom: 0; }
                 }
             }
+            &.receptiv {
+                .card-body { position: relative;
+                    @include respond-to(desktop-1024) { max-width: 488px; }
+                }
+            }
         }
         &_traditional-collections-method { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%;
             @include respond-to(tablet) { flex-direction: row; }
