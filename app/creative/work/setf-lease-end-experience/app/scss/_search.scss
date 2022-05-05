@@ -1,0 +1,38 @@
+.path-search-detail { background: #FAFBFE; 
+    .controls-wrapper { margin-bottom: 96px; background: #fff; max-width: 1144px; border-bottom: 0;
+
+    }
+}
+
+.ul-search form { display: flex; justify-content: space-between; align-items: center; margin: 0 auto; flex-wrap: wrap; padding-top: 40px;
+    @include respond-to(tablet) { padding-top: 16px; } 
+    .navbar { display: flex; flex-direction: column; justify-content: space-between; flex-wrap: nowrap; align-items: flex-end; position: relative; width: 100%; background-color: #fff; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); padding: 24px;
+        @include respond-to(tablet) { flex-direction: row; } 
+        .form-item { flex-basis: 80%;
+            label { display: inline-block; font-size: 16px; color: #59646C; margin-bottom: 16px;
+                @include respond-to(tablet) { margin-bottom: 8px; } 
+            }
+            .form-text { width: 100%; padding: 16px; margin-top: 4px; border: 2px solid #212121; font-size: 16px; }
+        }
+        .form-submit { width: 100%; font-size: 16px; text-transform: uppercase; letter-spacing: .5px; padding: 16px 48px; margin-top: 16px; line-height: 1.5; border-radius: 4px; color: #fff; background-image: none; background-color: #dc3545; border: 1px solid #dc3545; cursor: pointer;
+            @include respond-to(tablet) { width: auto; margin-top: 0; }  
+            // &:hover { background-color: darken(#dc3545, 8%); }
+            &:hover { background-color: #212121; border: 1px solid #212121; }
+        }
+    }
+}
+
+.search-results { position: relative; padding-bottom: 48px; padding-top: 0px;
+    & > div { display: flex; flex-direction: column; flex-wrap: wrap; position: relative; background: #fff; margin-top: 24px; padding: 24px 24px 4px; box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
+    h4 { padding-bottom: 12px;
+        a { font-size: 21px; color: #00518A;
+            &:link, &:visited, &:active { color: #00518A; }
+            &:hover { color: darken(#00518A, 8%); }
+        }
+    }
+    a { font-size: 12px; color: $primary-color; word-break: break-all;
+        &:link, &:visited, &:active { color: $primary-color; }
+        &:hover { color: darken(#C02032, 8%); }
+    }
+    .result-text { font-size: 14px; color: #4B555D; padding: 16px 0 24px; }
+}

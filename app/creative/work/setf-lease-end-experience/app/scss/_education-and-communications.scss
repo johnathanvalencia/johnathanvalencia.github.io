@@ -1,0 +1,49 @@
+.education-and-communications {
+
+    .hero_education-and-communications { display: none; position: relative; width: 100%; height: 100%; background: url(../app/creative/images/element-education-and-communication.svg) no-repeat; background-size: cover; margin-top: -56px; opacity: .3;
+        @include respond-to(tablet) { margin-top: -144px; }
+    }
+
+    .leadership { margin-top: 0; }
+
+    .leadership { 
+        @include respond-to(tablet) { margin-top: 0; padding-right: 24px; }
+        @include respond-to(desktop-1024) { padding-right: 24px; }
+        @include respond-to(desktop-1280) { padding-right: 24px; } 
+        @include respond-to(desktop-1366) { padding-right: 0; }
+        .leadership-info_quote {
+            @include respond-to(tablet) { font-size: 16px; line-height: 1.5; }
+            @include respond-to(desktop-1366) { font-size: 18px; line-height: 26px; }
+        } 
+    }
+
+    .short-mid-col { 
+        @include respond-to(tablet) { width: 780px;
+            .primary-content { width: auto; }
+        }
+    }
+
+    .img-wrapper .img { height: auto; }
+
+    .right-col { display: none;
+        @include respond-to(desktop-1024) { display: block; } 
+    }
+
+    #topEducationMedia2 { position: relative; }
+
+    .font-italic-green { font-style: italic; color: #88c22b; }
+
+    &-media { display: none; justify-content: flex-end; align-items: center; position: relative; height: 100%;
+        @include respond-to(tablet) { display: flex; } 
+        &_asset { position: absolute; width: 216px; height: 216px; border-radius: 50%; background: #EDF2F8; overflow: hidden; 
+            @include respond-to(desktop-1280) { width: 272px; height: 272px; }
+            @include respond-to(desktop-1366) { width: 318px; height: 318px; }
+        }
+    }
+
+    .img-with-border { border: 1px solid rgba(#000, .2); margin-top: 12px; }
+
+    .prefooter-img { margin-bottom: 24px;
+        @include respond-to(tablet) { margin-bottom: 0; }
+    }
+}

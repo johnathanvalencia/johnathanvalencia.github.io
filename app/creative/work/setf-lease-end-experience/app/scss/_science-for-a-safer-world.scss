@@ -1,0 +1,25 @@
+.science-for-a-safer-world {
+
+    .hero_science-for-a-safer-world { display: none; position: relative; width: 100%; height: 100%; background: url(../app/creative/images/hero-purpose-and-strategic-vision.svg) no-repeat; background-size: cover;
+        @include respond-to(tablet) { background-size: contain; }
+    }
+    .element_science-for-a-safer-world { display: none; position: absolute; width: 168px; height: 168px; border-radius: 50%; background: #EDF2F8; top: 54px; left: 50%; transform: translateX(-50%); margin-left: 144px; opacity: .8; 
+        @include respond-to(tablet) { width: 200px; height: 200px; margin-left: 172px; }
+    }
+
+    .img-parallax { position: relative; width: 100%; height: 240px; margin-top: 24px; margin-bottom: 56px; background: tomato; overflow: hidden;
+        @include respond-to(tablet) { height: 400px; }
+        img { transform: scale(2); transform-origin: top center;
+            @include respond-to(tablet) { transform: scale(1); }
+        }
+        div { position: absolute; display: flex; justify-content: center; align-items: center; width: 100%; bottom: 0px; 
+            h4.title-feature { position: relative; width: 100%; color: #fff; padding: 0 20px 0;
+                @include respond-to(tablet) { width: 678px; padding: 0; } 
+                &:before { background: #fff; left: 8px;
+                    @include respond-to(tablet) { left: -16px; } 
+                }
+            }
+        }
+    }
+
+}

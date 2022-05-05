@@ -2,8 +2,9 @@ var d = document,
     hamburger = true,
     menuClosed = true,
     page = 'home',
-    characterThem = document.getElementById("characterThem"),
-    characterMe = document.getElementById("characterMe");
+    characterThem = d.getElementById("characterThem"),
+    characterMe = d.getElementById("characterMe"),
+    mouseAnimation = d.getElementById('mouseAnimation');
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -82,13 +83,13 @@ function openMenu() {
     hamburger = false;
   } });
   gsap.set('.menu-items', { display:'flex', autoAlpha:1 });
-  gsap.fromTo(['.menu-items .intro', '.menu-items .case-studies', '.menu-items .capabilities', '.menu-items .character', '.menu-items .collaboration', '.menu-items .contact'], 
+  gsap.fromTo(['.menu-items .projects', '.menu-items .contact'], 
     { perspective:800, transformStyle:"preserve-3d", transformOrigin:'top right', autoAlpha:0, y:100, rotationZ:90, rotationY:90, x:48 }, { duration: .8, autoAlpha:1, rotationZ:0, y:0, rotationY:0, x:0, stagger: .05, ease:Expo.easeOut }
   );
 }
 
 function closeMenu() {
-  gsap.to(['.menu-items .contact', '.menu-items .collaboration', '.menu-items .character', '.menu-items .capabilities', '.menu-items .case-studies', '.menu-items .intro'], 
+  gsap.to(['.menu-items .contact', '.menu-items .projects'], 
     { duration: .4, autoAlpha:0, ease:Expo.easeOut }
   );
   gsap.set('.menu-items', { delay:.4, autoAlpha:0, display:'none' });
@@ -366,7 +367,7 @@ ScrollTrigger.matchMedia({
     var logoCollapse = gsap.timeline({
       scrollTrigger: {
         trigger: ".jv-logo",
-        scrub: true,
+        // scrub: true,
         start: "400px 20%",
         end: "+=80px",
         // id: "jv-logo",
@@ -751,5 +752,33 @@ function anchorContact(){
 
 function initSETFcasestudy() {
   var url = 'setf-collections.html';
-  window.open(url, "_blank");
+  window.open(url, "_self");
 }
+
+function openProjects() {
+  var url = 'projects.html';
+  window.open(url, "_self");
+}
+
+function getParameterByName(name) {
+  name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+  var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
+  var results = regex.exec(location.search);
+  return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+var contactSelection = getParameterByName('portfolio');
+
+function setContactAnchor(){
+  if ( contactSelection == 'johnathan' ){
+    const myTimeout = setTimeout(gotoContact, 500);
+  } else {
+    // console.log('not contact')
+  }
+}
+
+function gotoContact() {
+  anchorContact();
+}
+
+setContactAnchor();

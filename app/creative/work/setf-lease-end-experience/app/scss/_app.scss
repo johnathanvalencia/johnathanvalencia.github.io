@@ -1,0 +1,152 @@
+h1, h2, h3, h4, h5 { font-family: 'ToyotaTypeSemiBold', sans-serif; font-weight: 600; }
+h1 { font-size: 28px; margin: 0; padding: 0; 
+    @include respond-to(desktop-1024) { font-size: 48px; }
+}
+h2 { font-size: 24px; margin: 0; padding: 0; 
+    @include respond-to(desktop-1280) { font-size: 32px; }
+}
+h3 { font-size: 24px; margin: 0; padding: 0; }
+h4 { font-size: 21px; margin: 0; padding: 0; }
+h5 { font-size: 16px; margin: 0; padding: 0; line-height: 23px; 
+    @include respond-to(desktop-1280) { font-size: 18px; line-height: 32px; }
+}
+p { font-family: 'ToyotaTypeBook', sans-serif; margin: 0; font-size: 16px; font-weight: 300; line-height: 23px; color: #59646C; 
+    @include respond-to(desktop-1280) { font-size: 18px; line-height: 32px; }
+}
+
+$turn-in: #009E98;
+
+$textblue: #0B3C61;
+$textscienceblue: #3FB6E6;
+$textleadershipblue: #43B6E7;
+$textOrange: #F18A20;
+$textTeal: #0A96A5;
+$textGreen: #7EBA3E;
+$textRed: #C02032;
+.text-blue { color: $textblue; }
+.text-science-blue { color: $textscienceblue; }
+.text-leadership-blue { color: $textleadershipblue; }
+.text-orange { color: $textOrange; }
+.text-teal { color: $textTeal; }
+.text-green { color: $textGreen; }
+.text-red { color: $textRed; }
+.text-white { color: #fff; }
+
+$max-content-width: 1280px;
+
+section { position: relative; display: flex; justify-content: center; width: 100%; }
+
+.content { display: flex; flex-direction: column; position: relative; justify-content: space-between; width: 100%; padding: 0 24px;
+    @include respond-to(tablet) { flex-direction: row; padding: 16px 32px 0; }
+    @include respond-to(desktop-1280) { padding: 0 24px; max-width: $max-content-width; }
+    @include respond-to(desktop-1366) { padding: 0; }
+}
+
+.primary-content { width: 100%; padding: 0 20px 0; 
+    @include respond-to(tablet) { width: 780px; padding: 0 51px 0; }
+}
+
+.content {
+    ul { font-size: 16px; padding: 0; list-style: none; list-style-image: none; margin: 0; color: #212121; margin-bottom: 32px; margin-left: .8em;
+        @include respond-to(desktop-1024) { font-size: 16px; line-height: 1.75; margin-bottom: 32px; }
+        li {  display: list-item; }
+        li:before { content: ''; margin-left: -.8em; margin-top: 9px; width: 5px; height: 5px; background: #212121; position: absolute; border-radius: 50%; 
+            @include respond-to(tablet) { margin-top: 12px; } 
+        }
+    }
+}
+
+h4.title-feature { position: relative;
+    &:before { position: absolute; content:''; width: 3px; height: 100%; background: #0A3C62; left: -12px; 
+        @include respond-to(tablet) { left: -16px; } 
+    }
+    &.text-white {
+        &:before { background: rgba(#fff, .5); }
+    }
+}
+
+.content-background { padding-top: 40px; padding-bottom: 16px; margin-bottom: 32px;
+    @include respond-to(tablet) { padding-top: 64px; padding-bottom: 32px; margin-bottom: 48px; }
+    &_orange { background: #F18A20; }
+    &_teal { background: #36A1AE; }
+    &_green { background: #92C83E; }
+    &_ocean { background: #206177; }
+    &_deep-blue { background: #0A3C62; }
+    &_nightclub-blue { background: #0A1F72; }
+    &_red { background: rgba(#C02032, .95); }
+    h4.title-feature { padding-left: 16px;
+        &:before { left: 0px; }
+    }
+    img { margin: 8px 0 32px; 
+        @include respond-to(tablet) { margin: 16px 0 40px; }
+    }
+}
+
+.left-col, .right-col { width: 100%; padding: 0 20px;
+    @include respond-to(tablet) { width: 250px; padding: 0; }
+}
+
+.content-full { width: 100%; padding-left: 0; padding-right: 0; }
+
+.leadership { position: relative; padding-bottom: 32px;
+    @include respond-to(tablet) { margin-top: 164px; padding-bottom: 0; }
+}
+
+.leadership-info { width: 100%; font-size: 16px; padding: 24px 0 0;
+    &_name { font-weight: 700; padding-bottom: 2px; }
+    &_quote { position: relative; font-size: 18px; line-height: 26px; font-style: italic; color: #5A646A; padding-top: 16px; 
+        .quote-judy { position: absolute; background: url(../app/creative/quote-judy.svg) no-repeat; background-size: contain; width: 195px; height: 159px; top: 40px; left: -32px; opacity: .12; 
+            @include respond-to(tablet) { left: -40px; }
+        }
+        .quote-marilyn { position: absolute; background: url(../app/creative/quote-marilyn.svg) no-repeat; background-size: contain; width: 195px; height: 159px; top: 40px; left: -32px; opacity: .12; 
+            @include respond-to(tablet) { left: -40px; }
+        }
+        .quote-cara { position: absolute; background: url(../app/creative/quote-cara.svg) no-repeat; background-size: contain; width: 195px; height: 159px; top: 40px; left: -32px; opacity: .12; 
+            @include respond-to(tablet) { left: -40px; }
+        }
+        .quote-thomas { position: absolute; background: url(../app/creative/quote-thomas.svg) no-repeat; background-size: contain; width: 195px; height: 159px; top: 40px; left: -32px; opacity: .12; 
+            @include respond-to(tablet) { left: -40px; }
+        }
+        .quote-phil { position: absolute; background: url(../app/creative/quote-phil.svg) no-repeat; background-size: contain; width: 195px; height: 159px; top: 40px; left: -32px; opacity: .10; 
+            @include respond-to(tablet) { left: -40px; }
+        }
+    }
+    &.terry-prefooter { max-width: 208px; padding: 32px 24px 104px; color: #fff; background: #083B61; 
+        @include respond-to(tablet) { max-width: 276px; padding: 32px 24px 136px; }
+        .leadership-info_name { padding-bottom: 12px; }
+    }
+}
+
+.media-block { position: relative; width: 1040px; margin: 0 0 40px;
+    @include respond-to(tablet) { margin: 16px 0 48px; } 
+    &_split { display: flex; flex-direction: column; justify-content: space-between;
+        @include respond-to(tablet) { flex-direction: row; }
+        .img-wrapper { position: relative; max-width: 100%; height: auto; vertical-align: top; overflow: hidden; padding: 0 20px;
+            @include respond-to(tablet) { max-width: 49%; padding: 0; }
+            &:first-child { padding-bottom: 20px;
+                @include respond-to(tablet) { padding-bottom: 0; }
+            }
+            .img { position: relative; top: 0px; left: 0px; width: 100%; height: 280px; overflow: hidden; transition: all 0.2s ease-out;
+                @include respond-to(tablet) { height: 360px; }
+                img { width: 100%; height: auto; height: 100%; object-fit: cover; }
+            }
+            p { padding: 4px 0 0; font-size: 14px; opacity: .8; }
+        }
+    }
+    &_full { position: relative; 
+        img { max-width: 100%; }
+        &.with-caption {
+            img { margin-bottom: 8px; }
+            p { padding-bottom: 16px; padding: 0 12px;
+                @include respond-to(tablet) { padding: 0; }
+            }
+        }
+    }
+}
+
+.h1-title-space { padding-left: 48px; }
+
+.mobile-d-none { display: none; }
+.desktop1024-d-block {
+    @include respond-to(desktop-1024) { display: block; } 
+}

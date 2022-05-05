@@ -1,0 +1,12 @@
+.path-detail {
+    .lee-detail { display: flex; justify-content: space-between; position: relative; padding: 72px 0 104px; width: 100%;
+        & > div:first-child, & > div:last-child { position: relative; width: 100%; max-width: 184px; }
+        .lee-detail_back-button { position: relative; font-size: 16px; color: #38393B; font-family: 'ToyotaTypeSemiBold', sans-serif; font-weight: 600; cursor: pointer;
+            &:before { position: relative; font-family: "Font Awesome 5 Pro"; font-weight: 900; font-size: 14px; content: '\f060'; margin-right: 8px; color: #009E98; }
+        }
+        .lee-detail_content { position: relative; width: 100%; max-width: 752px; 
+            h5 { padding-bottom: 24px; }
+            p { padding-bottom: 24px; }
+        }
+    }
+}

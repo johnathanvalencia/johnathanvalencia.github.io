@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="457px" height="154px" viewBox="0 0 457 154" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 6</title>
+    <g id="Desktop-Design-Concept-Approved" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Journey---Turn-In" transform="translate(-354.000000, -1829.000000)">
+            <g id="Group-6" transform="translate(354.000000, 1830.832031)">
+                <path d="M456,0 C391.809896,31.4166667 320.809896,47.125 243,47.125 C126.285156,47.125 53.9709008,103.871094 13.9854504,137.519531" id="Path-3" stroke="#009E98" stroke-width="2" stroke-dasharray="12"></path>
+                <path d="M7.20752473,148.937105 L15.387742,140.756888 C15.5708089,140.573821 15.5708089,140.277038 15.387742,140.093933 L7.20752473,131.913716 C7.02445785,131.730649 6.72763696,131.730649 6.54460822,131.913716 L5.77121834,132.687106 C5.58815146,132.870134 5.58815146,133.166917 5.77121834,133.350022 L12.8297647,140.425391 L5.77121834,147.500761 C5.58815146,147.683827 5.58815146,147.98061 5.77121834,148.163677 L6.54460822,148.937105 C6.72763696,149.120134 7.02445785,149.120134 7.20752473,148.937105 Z" id="chevron-right" fill="#009E98" fill-rule="nonzero" transform="translate(10.579480, 140.425396) scale(-1, 1) rotate(40.000000) translate(-10.579480, -140.425396) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

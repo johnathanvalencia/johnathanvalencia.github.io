@@ -2,9 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Johnathan Valencia</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Product Designer"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="apple-touch-icon" sizes="180x180" href="app/creative/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="app/creative/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="app/creative/favicon/favicon-16x16.png">
+<link rel="manifest" href="app/creative/favicon/site.webmanifest">
+<link rel="mask-icon" href="app/creative/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="css/style.css">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script type="text/javascript"> emailjs.init('iSAzcqUzYLlrREswZ') </script>
@@ -15,14 +23,10 @@
 <header>
     <nav class="primary-nav">
       <div id="myMenu" class="menu-items">
-        <button class="menu-item intro active">introduction</button>
-        <button class="menu-item case-studies">case studies</button>
-        <button class="menu-item capabilities">capabilities</button>
-        <button class="menu-item character">character</button>
-        <button class="menu-item collaboration">collaboration</button>
-        <button class="menu-item contact">contact</button>
+        <button class="menu-item projects" onclick="openProjects()">projects</button>
+        <button class="menu-item contact" onclick="anchorContact()">contact</button>
       </div>
-      <div class="jv-logo" onmouseover="cursorHello()" onmouseout="removeCursorHello()">
+      <div class="jv-logo" onmouseover="cursorHello()" onmouseout="removeCursorHello()" onclick="anchorTop()">
         <div class="logo-johnathan-mask">
           <div class="logo-johnathan">
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -198,6 +202,13 @@
         </div>
       </div>
     </div>
+    <!-- <div id="mouseAnimation" class="scroll-animation">
+      <div class="scroll">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </div> -->
   </section>
 
   <section class="section-case-study-mobile primero">

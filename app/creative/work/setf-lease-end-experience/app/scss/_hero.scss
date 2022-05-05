@@ -1,0 +1,22 @@
+.hero { position: relative; width: 100%; height: 360px; margin-top: 72px; background: #F3F5FA;
+    @include respond-to(tablet) { height: 460px; }
+    @include respond-to(desktop-1024) { height: 560px; }  
+    &_img { position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;
+        img { width: 100%; height: auto; height: 100%; object-fit: cover; }
+    }
+}
+
+.hero-absolute { position: absolute; width: 100%; height: 320px; margin-top: 72px; background: #fff;
+    @include respond-to(tablet) { position: absolute; height: 640px; margin-top: 72px; }  
+    &.img { height: 320px; 
+        @include respond-to(tablet) { height: auto; height: 440px; }  
+    }
+    .hero_img { position: relative; top: 0px; left: 0px; width: 100%; height: 100%; background: #F3F5FA;
+        @include respond-to(tablet) { position: absolute; }  
+        img { width: 100%; height: auto; height: 100%; object-fit: cover; }
+    }
+}
+
+.page-intro { display: flex; justify-content: center; position: relative; width: 100%; margin-top: 72px;
+    h1 { padding-top: 72px; }
+}

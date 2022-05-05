@@ -41,6 +41,69 @@ createScrollStopListener(window, function() {
   gsap.set('#cursorAsset', { autoAlpha:1 });
 });
 
+function initMenu() {
+  if ( hamburger == true ) {
+    openMenu();
+  } else if ( hamburger == false ) {
+    closeMenu();
+  }
+  cursorShow();
+}
+
+function menuHover() {
+  if ( menuClosed == true ) {
+    gsap.to('.menu .anchor', { duration:.2, x:29, width:'3px', height:'3px', ease:Expo.easeOut });
+    cursorHide();
+    cursorBlow();
+  }
+}
+
+function menuHoverOut() {
+  if ( menuClosed == true ) {
+    gsap.to('.menu .anchor', { duration:.2, x:0, width:'24px', height:'3px', ease:Expo.easeOut });
+    cursorShow();
+    removeCursorBlow();
+  }
+}
+
+function openMenu() {
+  menuClosed = false;
+  gsap.to('.menu .top', { duration:.4, transformOrigin:'top left', x:3, y:-2, rotation:45, ease:Expo.easeOut });
+  gsap.to('.menu .bottom', { duration:.4, transformOrigin:'bottom left', x:3, y:2, rotation:-45, ease:Expo.easeOut });
+  // gsap.to('.menu .anchor', { duration:.4, width:'3px', height:'24px', x:29, y:56.5, ease:Expo.easeOut, onComplete:function() {
+  //   hamburger = false;
+  // } });
+  gsap.to('.menu .anchor', { duration:.4, x:60, autoAlpha:0, ease:Expo.easeOut, onComplete:function() {
+    hamburger = false;
+  } });
+  gsap.set('.menu-items', { display:'flex', autoAlpha:1 });
+  gsap.fromTo(['.menu-items .projects', '.menu-items .contact'], 
+    { perspective:800, transformStyle:"preserve-3d", transformOrigin:'top right', autoAlpha:0, y:100, rotationZ:90, rotationY:90, x:48 }, { duration: .8, autoAlpha:1, rotationZ:0, y:0, rotationY:0, x:0, stagger: .05, ease:Expo.easeOut }
+  );
+}
+
+function closeMenu() {
+  gsap.to(['.menu-items .contact', '.menu-items .projects'], 
+    { duration: .4, autoAlpha:0, ease:Expo.easeOut }
+  );
+  gsap.set('.menu-items', { delay:.4, autoAlpha:0, display:'none' });
+  // gsap.to('.menu .anchor', { duration:.4, width:'3px', height:'3px', y:0, ease:Expo.easeOut });
+  gsap.to('.menu .anchor', { duration:.4, x:0, autoAlpha:1, ease:Expo.easeOut });
+  gsap.to('.menu .anchor', { delay: .2, duration:.2, x:0, width:'24px', height:'3px', ease:Expo.easeOut });
+  gsap.to('.menu .top', { delay:.15, duration:.4, transformOrigin:'top left', x:0, y:0, rotation:0, ease:Expo.easeOut });
+  gsap.to('.menu .bottom', { delay:.15, duration:.4, transformOrigin:'bottom left', x:0, y:0, rotation:0, ease:Expo.easeOut, onComplete: function() {
+    hamburger = true;
+    menuClosed = true;
+  } });
+  removeCursorBlow();
+}
+
+function checkMenuStatus() {
+  if ( menuClosed == false ) {
+    closeMenu();
+  } 
+}
+
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
@@ -389,5 +452,15 @@ revealContainers.forEach((container) => {
 
 function initHome() {
   var url = 'index.html';
+  window.open(url, "_self");
+}
+
+function openProjects() {
+  var url = 'projects.html';
+  window.open(url, "_self");
+}
+
+function gotoContact(){
+  var url = 'index.html?portfolio=johnathan';
   window.open(url, "_self");
 }
