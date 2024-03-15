@@ -1,0 +1,15 @@
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; outline: none; padding: 0; margin: 0; }
+
+html, body { -webkit-touch-callout: none; -webkit-text-size-adjust: none; font-family: "Inter", sans-serif; font-weight: 400; color: #04043D; font-size: 16px; background-color:#fff; margin: 0px; overflow-x: hidden; }
+
+button, input, optgroup, select, textarea { font-family: inherit; }
+button, input { outline: none; border: none; margin: 0; }
+
+a { text-decoration: none; color: inherit; cursor: pointer; }
+
+$primary-color: #4f34fb;
+$white: #fff;
+$dark: #000;
+
+.primary-color { color: $primary-color; font-weight: 700; }
+.moder-color { color: #216FED; color: $primary-color; font-weight: 700; }

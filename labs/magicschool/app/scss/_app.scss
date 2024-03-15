@@ -1,0 +1,60 @@
+h1, h2, h3, h4, h5, p { font-family: "Inter", sans-serif; }
+h1 { font-size: 32px; font-weight: 600; margin: 0; padding: 0; }
+h2 { font-size: 32px; font-weight: 800; margin: 0; padding: 0; }
+h5 { font-size: 14px; font-weight: 700; margin: 0; padding: 0; }
+p { margin: 0; font-size: 16px; }
+
+body {
+    --img-maxwidth: 250px;
+    --filter-img: none;
+}
+
+$max-content-width: 1524px;
+
+section { position: relative; display: flex; justify-content: center; width: 100%; height: 100vh; }
+
+.content { position: relative; width: 100%; padding: 0 20px;
+  @include respond-to(tablet) { padding: 0 32px; }
+  @include respond-to(desktop-1280) { padding: 0 56px; max-width: $max-content-width; margin-top: 96px; }
+}
+
+.cover { object-fit: cover; }
+
+.registration { display: none; 
+    .content { display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
+    .modai { display: flex; flex-direction: column; gap: 32px; position: relative; width: 100%; max-width: 646px;
+        &-avatar { position: relative; width: 120px; 
+            img { position: relative; width: 100%; height: auto; }
+            .eyes { display: flex; justify-content: space-between; position: absolute; width: 47px; top: 72px; left: 51%; transform: translateX(-50%);
+                .eye { position: relative; width: 8px; height: 8px; background: #440B29; border-radius: 8px; }
+            }
+            .eyes-closed { display: flex; justify-content: space-between; position: absolute; width: 49px; top: 72px; left: 51%; transform: translateX(-50%);
+                .eye { position: relative; width: 10px; height: 10px; background: url(../app/creative/eyes-closed.svg) no-repeat; background-size: cover; }
+            }
+        }
+        .script { display: flex; flex-direction: column; align-items: flex-start; gap: 24px;
+            @include respond-to(tablet) { gap: 32px; }
+            p { position: relative; font-family: "Inter", sans-serif; font-weight: 500; line-height: 1.7; font-size: 14px;
+                @include respond-to(tablet) { font-size: 16px; }
+                &.mod-ai_hello { display: flex; flex-direction: column; }
+                // .blinker { @include type-blinker(); }
+            }
+        } 
+    }
+    .modai-input { width: 100%; max-width: 768px;
+        &:after { content: ''; display: flex; position: absolute; width: 18px; height: 16px; background: url(../app/creative/icon-paper-plane.svg) no-repeat; background-size: cover; top: 16px; right: 36px; pointer-events: none; 
+            @include respond-to(desktop-1024) { right: 16px; }
+        }
+        // input { display: flex; position: relative; width: 100%; height: 48px; padding: 16px; background: rgba(#fff, .8); border-radius: 10px; font-family: "Inter", sans-serif; font-weight: 500; font-size: 16px; box-shadow: 0px 19px 70px 0px rgba(163, 159, 176, 0.10); }
+        input { display: flex; position: relative; width: 100%; height: 48px; padding: 16px; background: radial-gradient(157.06% 93.26% at 5.38% 0%, #a18df1 0%, #836AE4 100%); border-radius: 10px; font-family: "Inter", sans-serif; font-weight: 500; font-size: 16px; color: #fff; }
+    }
+}
+
+.welcome-message { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; 
+    p { font-size: 14px; font-weight: 400; }
+}
+
+.final-message { position: relative; width: 100%; padding: 0;
+    @include respond-to(tablet) { padding: 0 32px; }
+    @include respond-to(desktop-1280) { padding: 0 56px; max-width: 1152px; margin: 56px 0; }
+}

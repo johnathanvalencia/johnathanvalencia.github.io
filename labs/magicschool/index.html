@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>MagicSchool AI</title> 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="loading">
+
+<main>
+
+  <div class="absolute w-full h-screen top-0">
+    <div class="absolute w-full h-full top-0 flex overflow-hidden">
+      <div class="absolute w-[614px] h-[582px] flex-shrink-0 bg-[#E1F4FF]/[.6] rounded-full blur-[125px] bottom-[-20%] left-[-10%]"></div>
+      <div class="absolute w-[1004px] h-[978px] flex-shrink-0 bg-[#F9E1FF]/[.6] rounded-full blur-[125px] top-[-32%] right-[-32%]"></div>
+    </div>
+  </div>
+
+  <section class="registration overflow-hidden">
+    <div class="content">
+      <div class="modai">
+        <div class="modai-avatar mt-8 lg:mt-20">
+          <img src="app/creative/raina.svg" width="100%" height="auto">
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="eyes-closed">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+        </div>
+        <div class="script">
+          <p class="mod-ai_hello"><span class="mod-ai_hello1">Hi. I'm <span class="primary-color">Raina</span>. </span><span class="mod-ai_hello2">I'll be with you every step of the way as you explore <span class="primary-color">MagicSchool</span>. Your AI assistant for all things teaching.</span> <span class="mod-ai_hello3">To begin, please create an account by providing a few details.</span></p>
+          <p class="mod-ai_request-name">Enter your full name in the field below.</p>
+          <p class="mod-ai_name moder-color"></p> 
+          <p class="mod-ai_request-username">Great! Now enter the email address you will use to log in.</p>
+          <p class="mod-ai_username moder-color"></p>
+          <p class="mod-ai_request-password">Pick a strong password that you'll remember easily.</p>
+          <p class="mod-ai_password moder-color"></p>
+          <p class="mod-ai_complete">Registration successful! Now, let's welcome you to <span class="primary-color">MagicSchool</span>.</p>
+        </div>
+      </div>
+      <div class="modai-input absolute px-5 bottom-6 lg:px-0 lg:bottom-[68px]">
+        <input type="text" id="modaiText" value="">
+      </div>
+    </div>
+  </section>
+
+  <section class="welcome-message-wrapper z-50 hidden overflow-hidden">
+    <div class="absolute w-full h-full top-0 overflow-hidden">
+      <img src="app/creative/site-sm.png" width="100%" height="auto" class="relative w-full h-auto bg-cover blur-[2px] md:hidden">
+      <img src="app/creative/site-md.png" width="100%" height="auto" class="relative w-full h-auto bg-cover blur-[2px] hidden md:block lg:hidden">
+      <img src="app/creative/site-lg.png" width="100%" height="auto" class="relative w-full h-auto bg-cover blur-[2px] hidden lg:block">
+      <div class="absolute w-full h-full top-0 bg-black/[.40]"></div>
+    </div>
+    <div class="welcome-message z-10 p-5 md:p-0">
+      <div class="flex flex-col justify-center p-6 text-lg bg-white rounded-xl max-w-[544px] max-md:px-5">
+        <div class="flex gap-4 justify-center font-semibold leading-6 max-md:flex-wrap"> 
+          <img src="app/creative/raina.svg" class="shrink-0 aspect-square w-[88px]" /> 
+          <div class="flex-auto my-auto">
+            <div class="text-base font-medium pr-4">We believe <span class="primary-color">#TeachersAreMagic</span> - and we are on a mission to fight teacher burnout with Artificial Intelligence.</div> 
+          </div>
+        </div>
+        <div class="flex flex-col p-6 mt-6 text-sm font-bold leading-5 rounded bg-[#E8ECF1] text-slate-900 max-md:px-5 max-md:max-w-full max-h-72 md:max-h-96 lg:max-h-none overflow-y-scroll lg:overflow-auto">
+          <div class="text-base font-medium leading-6 max-md:max-w-full">Best Practices for Using MagicSchool</div>
+          <hr class="shrink-0 mt-4 h-px bg-[#B5C2D2] max-w-full border-0"/>
+          <article class="mt-4 font-semibold max-md:max-w-full">
+            <p><span class="font-bold">Check for Bias and Accuracy:</span> AI might occasionally produce biased or incorrect content. Always double-check before sharing with students.</p>
+          </article>
+          <article class="mt-4 max-md:max-w-full">
+            <p><span class="font-bold">The 80-20 Approach:</span> Use AI for initial work, but make sure to add your final touch, review for bias and accuracy, and contextualize appropriately for the last 20%.</p>
+          </article>
+          <article class="mt-4 max-md:max-w-full">
+            <p><span class="font-bold">Your Judgement Matters:</span> See AI-generated content as a starting point, not a final solution. Always adhere to your school's guidelines.</p>
+          </article>
+          <article class="mt-4 max-md:max-w-full">
+            <p><span class="font-bold">Know the Limits:</span> Our AI's knowledge stops at 2021, so be aware when dealing with recent topics.</p>
+          </article>
+          <article class="mt-4 max-md:max-w-full">
+            <p><span class="font-bold">Protect Privacy:</span> Don't include personal student details like names or addresses. We strive to promptly remove any accidentally submitted information.</p>
+          </article>
+        </div>
+        <div class="flex gap-2 items-center justify-center self-start px-6 py-4 mt-6 text-white whitespace-nowrap bg-[#9C33F4] rounded-lg leading-[140%] max-md:px-5" tabindex="0" role="button">
+          <div class="grow font-semibold text-base">Start Making Magic</div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none"><path fill="#fff" d="M8.173 2.011 8.662.676C8.697.57 8.802.5 8.942.5c.104 0 .209.07.244.176l.489 1.335 1.327.492c.105.035.175.14.175.246 0 .14-.07.246-.175.281l-1.327.492-.49 1.3a.263.263 0 0 1-.244.176c-.14 0-.244-.07-.28-.176l-.488-1.3L6.88 3.03c-.105-.035-.175-.14-.175-.281 0-.106.07-.21.175-.246l1.292-.492ZM1.607 14.415 14.914 1.027a1.658 1.658 0 0 1 2.375 0l1.187 1.195a1.683 1.683 0 0 1 0 2.39L5.17 17.998a1.659 1.659 0 0 1-2.375 0l-1.187-1.194a1.683 1.683 0 0 1 0-2.39ZM16.904 3.417l-.803-.809-3.667 3.69.803.808 3.667-3.69ZM.244 4.647l1.991-.774.734-1.967c.035-.176.21-.282.384-.282.14 0 .314.106.35.282l.768 1.967 1.955.773c.175.036.28.211.28.352 0 .175-.105.351-.28.386l-1.955.738-.769 2.003c-.035.14-.21.246-.35.246-.174 0-.348-.105-.383-.246l-.734-2.003-1.99-.738C.104 5.35 0 5.174 0 4.998c0-.14.105-.316.244-.352Zm12.295 8.995 1.99-.773.734-1.968c.035-.175.21-.28.384-.28.14 0 .314.104.35.28l.768 1.968 1.956.773c.174.035.279.21.279.351 0 .176-.105.352-.28.387l-1.955.738-.769 2.003c-.035.14-.21.246-.349.246-.175 0-.35-.106-.384-.246l-.734-2.003-1.99-.738c-.14-.035-.245-.21-.245-.387 0-.14.105-.316.245-.351Z"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-more absolute flex justify-center px-4 py-2 text-base font-semibold whitespace-nowrap bg-white rounded-3xl bottom-6">Scroll for more</div>
+  </section>
+
+  <section class="ux-audit bg-white h-full hidden md:py-[88px]">
+    <div class="fixed w-full h-full top-0">
+      <div class="absolute w-[614px] h-[582px] flex-shrink-0 bg-[#E1F4FF]/[.6] rounded-full blur-[125px] bottom-[-20%] left-[-10%]"></div>
+      <div class="absolute w-[1004px] h-[978px] flex-shrink-0 bg-[#F9E1FF]/[.6] rounded-full blur-[125px] top-[-32%] right-[-32%]"></div>
+    </div>
+    <div class="final-message z-10">
+      <div class="flex flex-col px-3 py-6 bg-white md:rounded-xl shadow-2xl gap-12 md:gap-0">
+        <div class="px-12 py-16 max-md:px-2 max-md:py-5 max-md:max-w-full">
+          <div class="flex gap-16 max-lg:flex-col-reverse max-md:gap-0">
+              <article class="flex flex-col w-full max-md:ml-0 max-md:w-full">
+                  <header class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+                      <h2 class="text-2xl font-bold leading-8 max-md:max-w-full">Enhancing User Engagement from the First Minute</h2>
+                      <p class="mt-5 text-base leading-7 text-[#59646C] max-md:max-w-full">In my assessment of your platform, navigating from account creation to onboarding and site exploration exceeded 10 minutes before fully engaging with the platform's unique features. Ideally, users should encounter the platform's magical innovative qualities within the first minute of account setup. Utilizing AI to gather initial account details can enhance the user experience, making the platform feel more human and immediately fostering an emotional connection.</p>
+                  </header>
+              </article>
+              <aside class="flex flex-col w-full lg:max-w-[360px]">
+                  <img src="app/creative/registration.png" width="100%" height="auto" class="rounded">
+              </aside>
+          </div>
+        </div>
+        <div class="px-12 py-16 max-md:px-2 max-md:py-5 max-md:max-w-full">
+          <div class="flex flex-row-reverse gap-16 max-lg:flex-col-reverse max-md:gap-0">
+              <article class="flex flex-col w-full max-md:ml-0 max-md:w-full">
+                  <header class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+                    <h2 class="text-2xl font-bold leading-8 max-md:max-w-full">Streamlining Onboarding: User Journey Ecosystem for Enhanced Learning</h2>
+                    <p class="mt-5 text-base leading-7 text-[#59646C] max-md:max-w-full">The audit revealed the onboarding process involves several steps that could potentially overwhelm users due to cognitive overload. To improve this, I propose the "User Journey Ecosystem" approach. This method provides contextual, informative prompts as users engage with new features, ensuring information is presented precisely when needed, allowing for a smoother and more intuitive learning experience.</p>
+                  </header>
+              </article>
+              <aside class="flex flex-col w-full lg:max-w-[360px]">
+                <img src="app/creative/user-journey-ecosystem.png" width="100%" height="auto" class="rounded">
+              </aside>
+          </div>
+        </div>
+        <div class="px-12 py-16 max-md:px-2 max-md:py-5 max-md:max-w-full">
+          <div class="flex gap-16 max-lg:flex-col-reverse max-md:gap-0">
+              <article class="flex flex-col w-full max-md:ml-0 max-md:w-full">
+                  <header class="flex flex-col gap-5 grow max-md:mt-10 max-md:max-w-full">
+                    <h2 class="text-2xl font-bold leading-8 max-md:max-w-full">Overall Impressions</h2>
+                    <p class="text-base leading-7 text-[#59646C] max-md:max-w-full">The interface is friendly and seems targeted towards a non-technical audience, which is suitable for educators. It has a playful and accessible feel, with a strong brand presence. To further enhance the UX, consider the following recommendations for the authenticated landing page:
+                      <ul class="list-disc ml-8">
+                        <li class="text-base leading-7 text-[#59646C]">Increase whitespace to reduce visual clutter.</li>
+                        <li class="text-base leading-7 text-[#59646C]">Provide more intuitive categorization for ease of navigation.</li>
+                        <li class="text-base leading-7 text-[#59646C]">Add "Shop" to the menu for clarity, as the "Teachers are Magic" graphic does not explicitly indicate it leads to the shop.</li>
+                      </ul>
+                    </p>
+                  </header>
+              </article>
+              <aside class="flex flex-col w-full lg:max-w-[360px]">
+                <img src="app/creative/platform.png" width="100%" height="auto" class="rounded">
+              </aside>
+          </div>
+        </div>
+        <div class="px-12 py-16 max-md:px-2 max-md:py-5 max-md:max-w-full">
+          <div class="flex flex-row-reverse gap-16 max-lg:flex-col-reverse max-md:gap-0">
+              <article class="flex flex-col w-full max-md:ml-0 max-md:w-full">
+                <header class="flex flex-col grow max-md:mt-10 max-md:max-w-full">
+                  <h2 class="text-2xl font-bold leading-8 max-md:max-w-full">Unlock Your Product's Potential</h2>
+                  <p class="text-base mt-5 max-md:max-w-full text-[#59646C] leading-7">Audit and demo development required 1 day of dedicated effort. Consider the potential contributions I could make in the role of Head of Product.</p>
+                  <p class="text-base mt-5 max-md:max-w-full text-[#59646C] leading-7">Let's connect!</p>
+                  <div class="flex gap-4 self-start mt-5 text-blue-600 whitespace-nowrap">
+                    <!-- <p class="text-lg grow">Johnathan Valencia</p>
+                    <span class="text-slate-400">•</span> -->
+                    <p class="text-base grow leading-7"><a href="tel:+3473920272">347-392-0272</a></p>
+                    <span class="base text-[#59646C] leading-7">•</span>
+                    <a href="https://johnathanvalencia.github.io/app/creative/JohnathanValencia-Resume.pdf" target="_blank" class="text-base grow leading-7">Download CV</a>
+                  </div>
+                </header>
+              </article>
+              <aside class="flex flex-col w-full lg:max-w-[360px]">
+                <img src="app/creative/connect.png" width="100%" height="auto" class="rounded">
+              </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="app/vendor/gsap/gsap.min.js"></script>
+<script src="app/vendor/gsap/SplitText.min.js"></script>
+<script src="app/vendor/gsap/TextPlugin.min.js"></script>
+<script src="app/vendor/gsap/CustomWiggle.min.js"></script>
+<!-- <script src="app/vendor/gsap/ScrollToPlugin.min.js"></script>-->
+<script src="app/js/script.js"></script>
+<script src="app/js/imagesloaded.pkgd.min.js"></script>
+<!-- <script src="app/js/demo.js"></script> -->
+<!-- <script src="app/js/scroll-reveal.js"></script> -->
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+
+</html>

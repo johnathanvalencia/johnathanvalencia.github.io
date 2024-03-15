@@ -1,0 +1,14 @@
+header { display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; z-index: 999999; top: 28px; padding: 0 32px; font-family: "jetbrains"; font-weight: 500; font-size: 14px; color: $regent-grey; 
+    opacity: 0;
+    div { display: flex; align-items: center; gap: 32px; }
+    ul { display: flex; gap: 32px; 
+        li { cursor: pointer; 
+            &:hover { color: $modai-color; }
+            &.make-copy { position: relative; width: 100px; height: 18px; background: url(../app/creative/8096-file-copying.gif) no-repeat; background-size: contain; }
+        }
+    }
+    img { position: relative; max-width: 54px; height: auto; cursor: pointer; }
+    a { display: flex; padding: 7px 12px; border: 1px solid $regent-grey; 
+        &:hover { color: $white; border: 1px solid $modai-color; background: rgba($modai-color, .08) }
+    }
+}
