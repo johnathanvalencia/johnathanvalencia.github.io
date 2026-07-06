@@ -26,7 +26,7 @@ function HomeContent() {
           </div>
         </section>
 
-        <div className="below-fold">
+        <div className="below-fold hidden">
           <section className="section-case-study-mobile primero">
             <div className="content">
               <div className="case-study-mobile">
