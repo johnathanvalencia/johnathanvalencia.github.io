@@ -26,7 +26,7 @@ function HomeContent() {
           </div>
         </section>
 
-        <div className="below-fold hidden">
+        {/* <div className="below-fold hidden">
           <section className="section-case-study-mobile primero">
             <div className="content">
               <div className="case-study-mobile">
@@ -165,7 +165,7 @@ function HomeContent() {
               </div>
             </div>
           </section>
-        </div>
+        </div> */}
       </main>
     </>
   );
