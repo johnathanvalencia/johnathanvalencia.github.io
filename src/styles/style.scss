@@ -200,7 +200,7 @@ section { position: relative; display: flex; justify-content: center; align-item
     }
 }
 
-.below-fold { display: none !important; }
+.hidden { display: none !important; }
 
 .scroll-animation { display: flex; position: absolute; width: 100%; max-width: 1256px; margin: 0 auto; padding: 0 20px; bottom: 74px;
     @include respond-to(tablet) { padding: 0 32px; }

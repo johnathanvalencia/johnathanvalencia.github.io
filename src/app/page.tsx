@@ -26,7 +26,7 @@ function HomeContent() {
           </div>
         </section>
 
-        <div className="below-fold" aria-hidden="true">
+        <div className="below-fold">
           <section className="section-case-study-mobile primero">
             <div className="content">
               <div className="case-study-mobile">
