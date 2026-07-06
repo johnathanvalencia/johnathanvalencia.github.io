@@ -1,0 +1,159 @@
+header { display: none; position: relative; width: 100%; z-index: 999999; background:#EA0A1F;
+    .main-nav { display: none; flex-direction: row; justify-content: space-between; position: relative; align-items: center; font-size: 18px;
+        @include respond-to(tablet) { position: relative; width: 100%; padding: 0 32px; margin: 0 auto; }
+        @include respond-to(desktop-1280) { display:flex; max-width: 1280px; padding: 0 24px; }
+        @include respond-to(desktop-1366) { padding: 0; }
+        .primary-navigation { display: flex; align-items: center; position: relative; width: 100%; height: 88px;
+            .setf-logo { position: relative; width: 186px; height: 41px; background: url(../app/creative/setf-logo-white.svg) no-repeat; background-size: contain; }
+            ul { display: flex; font-family: 'ToyotaType', sans-serif; font-weight: 600; font-size: 16px; padding-left: 44px; color: #fff;
+                li { padding-right: 24px; 
+                    &:nth-child(-n+3) {
+                        &::after { position: relative; font-family: "Font Awesome 5 Pro"; font-weight: 900; content: '\f0d7'; margin-left: 8px; }
+                    }
+                    &:last-child { padding-right: 0; }
+                }
+            }
+        }
+        .secondary-navigation { display: flex; align-items: center;
+            .customer-menu { position: relative; width: max-content; font-family: 'ToyotaType', sans-serif; font-weight: 600; font-size: 14px; color: #fff; border: 2px solid #fff; padding: 10px 24px; border-radius: 21px; cursor: pointer; }
+        }
+    }
+    .main-sub-nav { display: flex; justify-content: center; position: relative; width: 100%; height: 38px; background: #ECF0F4;
+        @include respond-to(desktop-1280) { display:flex; background: #fff; height: 48px; }
+        & > div { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: relative; width: 100%; padding: 0 24px;
+            @include respond-to(desktop-1280) { max-width: 1280px; }
+            @include respond-to(desktop-1366) { padding: 0; }
+        }
+        .back-to-dashboard { display: flex; align-items: center; position: relative; font-size: 14px; font-weight: 600; cursor: pointer; 
+            @include respond-to(desktop-1280) { font-size: 16px; }
+            i { font-size: 12px; line-height: 21px; margin-right: 8px; }
+            &:hover i { color: #EA0A1F; }
+        }
+        .language-switcher { display: none; align-items: center; font-size: 14px;
+            @include respond-to(tablet) { display:flex; font-size: 16px; }
+            & > div:first-child { font-weight: 600; color: #EB0A1E; padding-right: 6px; }
+            .divider { height: 20px; border-left: 2px solid #59646c; margin-right: 6px; }
+        }
+    }
+    .local-nav { display: flex; justify-content: center; position: relative; width: 100%; height: auto; background: #F7F8FA;
+        @include respond-to(desktop-1280) { height: 166px; }
+        & > div { display: flex; flex-direction: column-reverse; position: relative; width: 100%; max-width: 344px; padding: 20px 0; 
+            @include respond-to(tablet) { flex-direction: row; justify-content: space-between; max-width: 1280px; padding: 24px; }
+            @include respond-to(desktop-1280) { padding: 32px 24px 0 24px; }
+            @include respond-to(desktop-1366) { padding: 32px 0 0 0; }
+        }
+        .journey-options { display: flex; align-items: flex-start; position: relative; }
+        .option-items { display: flex; flex-direction: column; align-items: center; position: absolute; top: 0px; width: 104px; }
+        .option-background { position: relative; width: 104px; height: 64px; background: #fff; border-radius: 8px; border: 2px solid #E1E7EE; transition: all 0.1s ease-out; }
+        .journey-options_turnin { position: relative; margin-right: 16px; cursor: pointer;
+            .option-background { background: #E5F4F4; border: 2px solid rgba(#009E98, .5); }
+            .option-items {
+                .option-icon { position: relative; width: 22px; height: 15px; background: url(../app/creative/journey-icon-return.svg) no-repeat; background-size: contain; margin-top: 12px; 
+                    @include respond-to(desktop-1280) { width: 24px; height: 17px; }  
+                }
+                .option-vehicle { display: none; position: relative; width: 48px; height: 30px; background: url(../app/creative/journey-vehicle-turnin.svg) no-repeat; background-size: contain; margin-top: 11px; 
+                    @include respond-to(desktop-1280) { display: block; }  
+                }
+                .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; 
+                    @include respond-to(desktop-1280) { font-size: 24px; padding-top: 6px; }
+                }
+            }
+        }
+        .journey-options_extend { position: relative; margin-right: 16px; overflow: hidden; cursor: pointer;
+            .option-items {
+                .option-icon { position: relative; width: 26px; height: 13px; background: url(../app/creative/journey-icon-extend-grey.svg) no-repeat; background-size: contain; margin-top: 12px; pointer-events: none; }
+                .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; padding-top: 2px; pointer-events: none; }
+            }
+            &:hover .option-background { background: #EBEAF3; border: 2px solid rgba(#3B328E, .5); }
+        }
+        .journey-options_purchase { position: relative; overflow: hidden; cursor: pointer;
+            .option-items {
+                .option-icon { position: relative; width: 18px; height: 18px; background: url(../app/creative/journey-icon-purchase-grey.svg) no-repeat; background-size: contain; margin-top: 10px; }
+                .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; padding-top: 1px; }
+            }
+            &:hover .option-background { background: #FDF0F1; border: 2px solid rgba(#F26B73, .5); }
+        }
+        .secure-message { display: flex; position: relative; align-items: center; justify-content: space-between; width: auto; height: 54px; margin-bottom: 16px; background: #fff; border-radius: 8px; border: 2px solid #E1E7EE; padding: 16px 20px; font-family: 'ToyotaTypeSemiBold', sans-serif; font-weight: 600; font-size: 14px; line-height: 20px; transition: all 0.1s ease-out; cursor: pointer;
+            @include respond-to(tablet) { max-width: 240px; margin-bottom: 0; height: 64px; }
+            @include respond-to(desktop-1280) { width: auto; max-width: 280px; height: 102px; font-size: 16px; line-height: 23px; padding: 28px 20px; }
+            &_icon { position: relative; min-width: 37px; min-height: 22px; background: url(../app/creative/secure-message-icon.svg) no-repeat; background-size: contain; margin-top: 4px; 
+                @include respond-to(tablet) { margin-left: 20px; }
+                @include respond-to(desktop-1280) { min-width: 58px; min-height: 36px; }
+            }
+            &:hover { border: 2px solid rgba(#EC0B1E, .5);}
+        }
+    }
+    .mobile-nav { display: flex; flex-direction: row; justify-content: space-between; align-items: center; position: relative; width: 100%; padding: 12px 24px;
+        @include respond-to(desktop-1280) { display: none; }
+        .primary-navigation { position: relative; width: 24px;
+            .setf-menu { display: inline-block; position: relative; width: 24px; height: 3px; background: #fff; margin: 6px 0;
+                &:before { position: absolute; left: 0; width: 100%; height: 3px; content: ''; background: #fff; top: -6px; }
+                &:after { position: absolute; left: 0; width: 100%; height: 3px; content: ''; background: #fff; bottom: -6px; }
+                // .menu { display: flex; flex-direction: column; justify-content: space-between; position: relative; min-width: 16px; height: 14px;
+                //     .line { width: 16px; height: 2px; background: #fff; }
+                // }
+            }
+        }
+        .setf-logo { position: relative; width: 186px; height: 41px; background: url(../app/creative/setf-logo-white.svg) no-repeat; background-size: contain; }
+        .user-account { color: #fff; font-size: 24px; }
+    }
+}
+
+.local-nav-sticky { display: flex; justify-content: center; position: fixed; width: 100%; height: 174px; background: #F7F8FA; top: 0px; z-index: 999999;
+    @include respond-to(tablet) { position: fixed; height: 112px; top: 0; }
+    & > div { display: flex; flex-direction: column-reverse; justify-content: space-between; position: relative; width: 100%; max-width: 344px; padding: 20px 0; 
+        @include respond-to(tablet) { flex-direction: row; max-width: 1280px; padding: 24px 24px 0; }
+        @include respond-to(desktop-1366) { padding: 24px 0 0; }
+    }
+    .journey-options { display: flex; align-items: flex-start; }
+    .option-items { display: flex; flex-direction: column; align-items: center; position: absolute; top: 0px; width: 104px; }
+    .option-background { position: relative; width: 104px; height: 64px; background: #fff; border-radius: 8px; border: 2px solid #E1E7EE; transition: all 0.1s ease-out; }
+    .journey-options_turnin { position: relative; margin-right: 16px; cursor: pointer;
+        .option-background { background: #E5F4F4; border: 2px solid rgba(#009E98, .5); }
+        .option-items {
+            .option-icon { position: relative; width: 18.5px; height: 13px; background: url(../app/creative/journey-icon-return.svg) no-repeat; background-size: contain; margin-top: 12px; }
+            .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; padding-top: 3px; }
+        }
+    }
+    .journey-options_extend { position: relative; margin-right: 16px; overflow: hidden; cursor: pointer;
+        .option-items {
+            .option-icon { position: relative; width: 26px; height: 13px; background: url(../app/creative/journey-icon-extend-grey.svg) no-repeat; background-size: contain; margin-top: 12px; pointer-events: none; }
+            .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; padding-top: 2px; pointer-events: none; }
+        }
+        &:hover .option-background { background: #EBEAF3; border: 2px solid rgba(#3B328E, .5); }
+    }
+    .journey-options_purchase { position: relative; overflow: hidden; cursor: pointer;
+        .option-items {
+            .option-icon { position: relative; width: 18px; height: 18px; background: url(../app/creative/journey-icon-purchase-grey.svg) no-repeat; background-size: contain; margin-top: 10px; }
+            .option-title { position: relative; font-family: 'MarydaleBlack'; font-size: 20px; padding-top: 1px; }
+        }
+        &:hover .option-background { background: #FDF0F1; border: 2px solid rgba(#F26B73, .5); }
+    }
+    .secure-message { display: flex; justify-content: space-between; position: relative; align-items: center; max-width: 100%; height: auto; background: #fff; border-radius: 8px; border: 2px solid #E1E7EE; padding: 12px 20px; font-family: 'ToyotaTypeSemiBold', sans-serif; font-weight: 600; font-size: 14px; line-height: 20px; transition: all 0.1s ease-out; cursor: pointer;
+        @include respond-to(tablet) { max-width: 248px; height: 64px; padding: 28px 20px; }
+        &_icon { position: relative; min-width: 37px; min-height: 22px; background: url(../app/creative/secure-message-icon.svg) no-repeat; background-size: contain; margin-top: 4px; 
+            @include respond-to(tablet) { min-width: 46px; min-height: 28px; margin-left: 20px; }
+        }
+        &:hover { border: 2px solid rgba(#EC0B1E, .5); }
+    }
+}
+
+.section-prefooter {  
+    &:before { position: absolute; content: ''; width: 100%; height: 50%; bottom: 0; background: #FCD48C; box-shadow: 0 -8px 0 0 rgba(#FAA919,0.1); 
+        @include respond-to(tablet) { height: 154px; }
+    }
+}
+
+.prefooter { display: flex; justify-content: center; position: relative; width: 100%; margin: 0 auto; }
+
+footer { display: flex; justify-content: center; position: relative; width: 100%; min-height: 296px; border-top: 2px solid #E1E7EE; 
+    @include respond-to(desktop-1280) { padding: 24px 0 48px; }
+    & > div { margin-top: 40px; }
+    h5 { opacity: .5; 
+        @include respond-to(desktop-1280) { display: none; }
+    }
+    .footer-img { display: none; position: relative; width: 1280px; height: 234px; background: url(../app/creative/setf-footer.jpg) no-repeat; background-size: cover;
+        @include respond-to(desktop-1280) { display: block; }
+        img { width: 100%; height: auto; }
+    }
+}

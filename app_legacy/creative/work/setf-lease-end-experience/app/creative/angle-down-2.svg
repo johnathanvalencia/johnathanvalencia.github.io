@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="10px" viewBox="0 0 16 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>chevron-down 2</title>
+    <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Homepage---Menu-Hover" transform="translate(-282.000000, -304.000000)" fill="#212121" fill-rule="nonzero">
+            <g id="Menu" transform="translate(48.000000, 57.000000)">
+                <g id="chevron-down-2" transform="translate(234.090534, 247.311641)">
+                    <path d="M8.08327464,8.77938562 L15.4449896,1.41767068 C15.6101961,1.25242984 15.6101961,0.985256707 15.4449896,0.82001586 L14.74887,0.123930636 C14.5836635,-0.0413102119 14.316456,-0.0413102119 14.1512152,0.123930636 L7.78444723,6.47665673 L1.41767927,0.123930636 C1.25243842,-0.0413102119 0.985230958,-0.0413102119 0.820024443,0.123930636 L0.123904886,0.82001586 C-0.0413016288,0.985256707 -0.0413016288,1.25242984 0.123904886,1.41767068 L7.48561982,8.77938562 C7.65086067,8.94462646 7.9180338,8.94462646 8.08327464,8.77938562 Z" id="chevron-down"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

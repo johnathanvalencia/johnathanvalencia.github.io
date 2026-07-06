@@ -1,0 +1,27 @@
+* { -webkit-tap-highlight-color: rgba(0,0,0,0); box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; list-style: none; outline: none; padding: 0; margin: 0; }
+
+html, body { -webkit-touch-callout: none; -webkit-text-size-adjust: none; font-family: 'Open Sans', sans-serif; font-weight: 400; color: #38393B; font-size: 18px; background-color:#fff; margin: 0px; }
+
+:root { 
+    --white: white;
+    --dark-color: #1E242B;
+    --light-copy-color: #6B727D;
+    --primary-color: #C02032;
+    --grey-bg: #FAFBFE;
+    --cloud-grey-color: #E8ECF1;
+}
+
+button, input, optgroup, select, textarea { font-family: inherit; }
+
+a { text-decoration: none; color: inherit; cursor: pointer; }
+
+$primary-color: #C02032;
+$cloud-grey-color: #E8ECF1;
+$grey-bg: #FAFBFE;
+
+.position-absolute { position: absolute; }
+.flex-center { display: flex; justify-content: center; width: 100%; }
+.font-400 { font-weight: 400; }
+.font-600 { font-weight: 600; }
+.font-bold { font-weight: 700; }
+.pt-16 { padding-top: 8px; }

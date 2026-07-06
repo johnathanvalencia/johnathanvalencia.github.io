@@ -1,0 +1,69 @@
+.page-work {
+    .content { margin-top: 160px; }
+}
+
+.work_case-studies { display: none; position: relative; width: 100%; padding-bottom: 32px;
+    .cards_work-case-studies { display: flex; justify-content: space-between; flex-wrap: wrap; position: relative; width: 100%;
+        .card { position: relative; width: 100%; max-width: 48.6%; border-radius: 8px; margin-bottom: 48px;
+            .card-body { position: relative; width: 100%; 
+                img { width: 100%; height: auto; border-radius: 8px; overflow: hidden; transform: scale(1); transition: all .25s ease-in-out; }
+                .caption { display: flex; justify-content: space-between; width: 100%; position: relative; padding-top: 4px;
+                    h5 { font-weight: 500; color: var(--dark-color); line-height: 25px; }
+                    .tag { font-size: 12px; font-weight: 600; color: #697483; background: rgba(#E6EBF5, 1); padding: 4px 6px; border-radius: 4px; }
+                }
+                &:hover img { transform: scale(.96); }
+                &:hover h5 { text-decoration: underline; }
+            }
+        }
+    }
+    .cards_work { display: flex; flex-wrap: wrap; position: relative; width: 102.5%; padding-top: 48px; margin-left: -16px; margin-right: -16px;
+        .card { position: relative; flex: 0 0 25%; max-width: 25%; padding-left: 16px; padding-right: 16px; margin-bottom: 48px; overflow: hidden; 
+            .card-body { position: relative; width: 100%; 
+                img { width: 100%; height: auto; border-radius: 8px; overflow: hidden; }
+                .caption { position: relative; padding-top: 4px;
+                    h5 { font-weight: 500; color: var(--dark-color); }
+                }
+            }
+        }
+    }
+}
+
+.work-overlay { display: none; flex-direction: column; position: fixed; width: 100%; height: 100vh; top: 0px; background: rgba(#000, .8); padding: 0 32px; z-index: 999999;
+    .close { display: flex; justify-content: flex-end; position: relative; padding: 16px 0; 
+        img { width: 100%; height: auto; max-width: 16px; cursor: pointer; }
+    }
+    .work-wrapper { display: flex; flex-direction: column; align-items: center; position: relative; width: 100%; height: 96%; background: #fff; border-top-left-radius: 8px; border-top-right-radius: 8px; padding: 72px 72px 0; overflow-y: scroll;
+        .iframe-wrapper { display: none; position: relative; width: 100%; height: 800px; border-radius: 8px; overflow: hidden; border: 1px solid #E8ECF1; }
+        .content { margin-top: 0; max-width: 100%; } 
+        .work-info { display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; width: 100%; padding-bottom: 72px;
+            .img-wrapper { display: none; position: relative; width: 100%; max-width: 1256px;
+                img { border-radius: 8px; overflow: hidden; }
+            }
+            .video-wrapper { display: none; position: relative; width: 100%; max-width: 1256px;
+                video { position: relative; width: 100%; border-radius: 8px; overflow: hidden; }
+            }
+            .gallery-wrapper { display: none; justify-content: space-between; align-items: center; position: relative; width: 100%; max-width: 1256px; padding: 16px 0; border-bottom: 1px solid #E8ECF1;
+                ul { display: flex; position: relative;
+                    li { position: relative; max-width: 76px; height: 56px; border: 2px solid #E8ECF1; border-radius: 8px; overflow: hidden; cursor: pointer;
+                        img { width: 100%; height: auto; }
+                        &:not(:first-child) { margin-left: 20px; }
+                        &:first-child { border: 2px solid #40ACE4; }
+                    }
+                }
+                .cta { display: none; position: relative; }
+                a { display: flex; position: relative; align-items: center; color: #fff; font-size: 16px; font-weight: 600; padding: 0 24px; height: 36px; background-color: #40ACE4; border-radius: 18px; }
+            }
+            .info { position: relative; width: 768px; padding-bottom: 16px;
+                h3 { padding: 56px 0 32px; font-weight: 500; }
+                p { font-size: 21px; line-height: 36px; color: #4e616b; }
+                .responsibilites { position: relative; width: 100%; padding: 32px 0 24px; margin: 48px 0 0; border-top: 1px solid #E8ECF1; border-bottom: 1px solid #E8ECF1; 
+                    ul { display: flex; flex-wrap: wrap; padding-top: 16px;
+                        li { font-size: 14px; font-weight: 500; color: #697483; background: rgba(#40ACE4, .1); padding: 4px 6px; border-radius: 4px; margin-bottom: 16px;
+                            &:not(:first-child) { margin-left: 16px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
