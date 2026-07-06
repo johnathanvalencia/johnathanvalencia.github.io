@@ -1,0 +1,133 @@
+.cards_landing-page { display: flex; flex-wrap: wrap; position: relative; width: 100%; padding-top: 48px;
+    @include respond-to(desktop-1024) { padding-top: 80px; }
+    @include respond-to(desktop-1280) { padding-top: 128px; }
+    .card { position: relative; flex: 0 0 100%; max-width: 100%;
+        .card-body { display: flex; flex-direction: column; justify-content: space-between; align-items: center; position: relative; margin-bottom: 36px;
+            @include respond-to(tablet) { flex-direction: row;  margin-bottom: 0; align-items: flex-start; }
+            @include respond-to(desktop-1024) { align-items: center; }
+            .img-wrapper { position: relative; width: 100%; height: auto; vertical-align: top; overflow: hidden;
+                @include respond-to(tablet) { padding-right: 56px; }
+                @include respond-to(desktop-1280) { padding-right: 0; }
+                .img { position: relative; top: 0px; left: 0px; width: 100%; height: auto; overflow: hidden;
+                    img { width: 100%; height: auto; }
+                }
+            }
+            .info { display: flex; flex-direction: column; align-items: flex-start; position: relative; width: 100%; max-width: 620px; padding-top: 20px;
+                @include respond-to(tablet) { padding-top: 0; }
+                @include respond-to(desktop-1280) { margin: 0 40px 0 0; padding-top: 0; }
+                .title { display: flex; flex-direction: column; align-items: baseline; position: relative; padding-bottom: 24px; 
+                    @include respond-to(tablet) { padding-bottom: 40px; }
+                    h2 { line-height: 34px; padding-right: 8px;
+                        @include respond-to(tablet) { line-height: 48px; padding-right: 0; }
+                        span { display: inline-block; position: relative; font-family: 'MarydaleBlack'; transform: scale(1.15); transform-origin: center left; }
+                    }
+                    p { line-height: normal; padding-top: 4px; 
+                        @include respond-to(tablet) { max-width: 568px; }
+                    }
+                }
+                .content-links { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; width: 100%;
+                    @include respond-to(tablet) { flex-direction: column; align-items: flex-start; }
+                    & > div { position: relative; flex: 0 0 48%; max-width: 48%; margin-bottom: 14px;
+                        @include respond-to(tablet) { flex: 0 0 100%; max-width: 100%; cursor: pointer; margin-bottom: 28px; }
+                        &:last-child {
+                            @include respond-to(tablet) { margin-bottom: 0; }
+                        }
+                    }
+                }
+                a { display: flex; flex-direction: column; height: 100%; position: relative; border: 2px solid #E1E7EE; border-radius: 8px; padding: 16px 16px 20px; cursor: pointer;
+                    @include respond-to(tablet) { flex-direction: row; align-items: center; border: none; border-radius: 0; padding: 0; }
+                    @include respond-to(tablet) {
+                        &:before { position: absolute; content: ''; top: 0; left: 0; bottom: 0; left: 0; padding: 12px 16px 12px 12px; margin: -12px -16px -12px -12px; background: #FFFFFF; box-shadow: 0 8px 16px 0 #C8D3DB; border-radius: 6px; width: 100%; height: 100%; opacity: 0; transition: all 0.2s ease-out; }
+                        &:hover:before { opacity: 1; }
+                        &:hover h5:after { opacity: 1; margin-left: 12px; }
+                    }
+                }
+                .button-icon { position: relative; top: 0px; left: 0px; width: 48px; height: 48px; border-radius: 8px; overflow: hidden; 
+                    img { width: 100%; height: auto; height: 100%; object-fit: cover; }
+                }
+                h5 { position: relative; padding-top: 12px;
+                    @include respond-to(tablet) { padding-top: 0; padding-left: 16px; width: max-content; }
+                    &::after { position: relative; font-family: "Font Awesome 5 Pro"; font-size: 16px; font-weight: 400; content: '\f061'; margin-left: 0px; margin-top: -2px; opacity: 0; transition: all 0.2s ease-out; }
+                }
+            }
+        }
+        &:first-child {
+            @include respond-to(tablet) { 
+                .card-body { align-items: flex-start; }
+            }
+            @include respond-to(desktop-1024) { 
+                .card-body {  
+                    .info { padding-top: 20px; }
+                }
+            }
+        }
+        &.reverse .card-body { 
+            @include respond-to(tablet) { flex-direction: row-reverse; 
+                .img-wrapper { display: flex; justify-content: flex-end; padding-left: 56px; padding-right: 0; }
+            }
+            @include respond-to(desktop-1280) { 
+                .img-wrapper { padding-left: 0; }
+                .info { margin: 0 0 0 72px; }
+            }
+        }
+        &.helpful-starters {
+            .img-wrapper .img { max-width: 504px; }
+        }
+        &.ewu {
+            .img-wrapper .img { max-width: 566px; }
+        }
+        &.advertisment {
+            // .img-wrapper .img { max-width: 548px; }
+        }
+        &.mileage {
+            .img-wrapper .img { max-width: 520px; }
+        }
+        &.inspection {
+            .img-wrapper .img { max-width: 520px; }
+        }
+        &.return {
+            .img-wrapper .img { max-width: 496px; }
+        }
+    }
+}
+
+.lease-end-experience_turn-in {
+    .cards_landing-page .info .title h2 span { color: $turn-in; }
+}
+
+.card_prefooter { display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; width: 100%; padding-top: 56px;
+    @include respond-to(tablet) { flex-direction: row; padding-top: 104px; align-items: flex-end; }
+    .img-wrapper { display: block; position: relative;
+        @include respond-to(tablet) { display: block; }
+        .img { position: relative; width: auto; height: 245px; margin-bottom: -56px; overflow: hidden;
+            @include respond-to(tablet) { margin-bottom: 0; }
+            @include respond-to(desktop-1024) { height: 300px; }
+            @include respond-to(desktop-1280) { height: 346px; }
+            img { width: auto; height: 245px; 
+                @include respond-to(desktop-1024) { height: 300px; }
+                @include respond-to(desktop-1280) { height: 346px; }
+            }
+        }
+    }
+}
+
+.cards_related { display: flex; flex-wrap: wrap; justify-content: space-between; position: relative;
+    @include respond-to(tablet) { padding-left: 40px; }
+    @include respond-to(desktop-1280) { padding-left: 64px; }
+    .card { position: relative; flex: 0 0 48%; max-width: 48%; margin: 0 0 14px 0;
+        @include respond-to(tablet) { flex: 0 0 160px; max-width: 160px; margin: 0 16px 0 0; }
+        @include respond-to(desktop-1024) { flex: 0 0 200px; max-width: 200px; margin: 0 24px 0 0; }
+        @include respond-to(desktop-1280) { flex: 0 0 224px; max-width: 224px; margin: 0 40px 56px 0; }
+        .card-body { display: flex; flex-direction: column; justify-content: space-between; position: relative; background: #fff; border: 2px solid #E1E7EE; border-radius: 8px; bottom: 0px; transition: all 0.2s ease-out;
+            a { display: flex; flex-direction: column; height: 100%; cursor: pointer; padding: 20px 20px 24px; }
+            .icon { position: relative; top: 0px; left: 0px; width: 48px; height: 48px; border-radius: 8px; overflow: hidden;
+                img { width: 100%; height: auto; height: 100%; object-fit: cover; }
+            }
+            h5 { padding-top: 16px; }
+            &:hover { border: 2px solid rgba(#FAA91A,0.4); bottom: 16px; }
+        }
+        &:last-child { margin: 0 0 24px 0; 
+            @include respond-to(tablet) { margin: 0 0 56px 0; }
+        }
+    }
+}

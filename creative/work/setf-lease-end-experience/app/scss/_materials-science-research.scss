@@ -1,0 +1,29 @@
+.materials-science-research {
+    .page-intro h1 { padding: 72px 20px 0; font-size: 44px; color: #fff;
+        @include respond-to(tablet) { padding: 72px 0 0; font-size: 60px; }
+    }
+
+    .leadership { 
+        @include respond-to(tablet) { margin-top: 136px; padding-right: 24px; }
+        @include respond-to(desktop-1024) { margin-top: 144px; padding-right: 24px; }
+        @include respond-to(desktop-1280) { margin-top: 160px; padding-right: 24px; } 
+        @include respond-to(desktop-1366) { margin-top: 164px; padding-right: 0; }
+        .leadership-info_quote {
+            @include respond-to(tablet) { font-size: 16px; line-height: 1.5; }
+            @include respond-to(desktop-1366) { font-size: 18px; line-height: 26px; }
+        } 
+    }
+
+    .font-blue { color: #3FB6E6; }
+    &-media { display: flex; justify-content: flex-end; align-items: center; position: relative; height: 100%;
+        &_asset { position: absolute; width: 216px; height: 216px; border-radius: 50%; overflow: hidden; 
+            @include respond-to(desktop-1280) { width: 272px; height: 272px; }
+            @include respond-to(desktop-1366) { width: 318px; height: 318px; }
+            &.msr-img { position: relative; width: 100%; height: auto; border-radius: 0px; margin: 0 0 24px;
+                @include respond-to(tablet) { position: absolute; border-radius: 50%; margin: 0; }
+                @include respond-to(desktop-1280) { width: 272px; height: 272px; }
+                @include respond-to(desktop-1366) { width: 318px; height: 318px; }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap');
+
+@font-face {
+    font-family:'MarydaleBlack';
+    src:url('../app/creative/fonts/Marydale-Black.woff') format('woff'),
+        url('../app/creative/fonts/Marydale-Black.ttf')  format('truetype');
+}
+
+@font-face {
+    font-family: 'ToyotaTypeRegular';
+    src:  url('../app/creative/fonts/ToyotaType-Regular.woff2') format('woff2'),
+          url('../app/creative/fonts/ToyotaType-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ToyotaTypeBook';
+    src:  url('../app/creative/fonts/ToyotaType-Book.woff2') format('woff2'),
+          url('../app/creative/fonts/ToyotaType-Book.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ToyotaTypeSemiBold';
+    src:  url('../app/creative/fonts/ToyotaType-Semibold.woff2') format('woff2'),
+          url('../app/creative/fonts/ToyotaType-Semibold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ToyotaTypeBold';
+    src:  url('../app/creative/fonts/ToyotaType-Bold.woff2') format('woff2'),
+          url('../app/creative/fonts/ToyotaType-Bold.woff') format('woff');
+}
