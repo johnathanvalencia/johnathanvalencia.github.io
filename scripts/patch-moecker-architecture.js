@@ -39,6 +39,31 @@ const EXTRA_CSS = `
   .sec-alt{background:var(--bg2);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);}
   .sec-hero-pad{padding:112px 32px;scroll-margin-top:80px;display:flex;justify-content:center;}
   .sec-pad{padding:104px 32px;scroll-margin-top:80px;display:flex;justify-content:center;}
+  .workflow-desktop{display:flex;flex-direction:column;align-items:center;gap:18px;}
+  .workflow-row{display:flex;align-items:stretch;flex-wrap:nowrap;justify-content:center;}
+  .workflow-unit{display:flex;align-items:center;}
+  .workflow-card{width:176px;min-height:172px;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:14px;}
+  .workflow-arrow-h{font-size:26px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);margin:0 10px;flex-shrink:0;}
+  .workflow-arrow-between{font-size:22px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);}
+  .workflow-responsive{display:none;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch;}
+  .workflow-item{display:flex;flex-direction:column;align-items:center;min-width:0;}
+  .workflow-responsive .workflow-card{width:100%;}
+  .workflow-arrow-v{display:none;align-items:center;justify-content:center;padding:10px 0;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);font-size:20px;}
+  @media (max-width:959px){
+    .workflow-desktop{display:none;}
+    .workflow-responsive{display:grid;}
+  }
+  @media (max-width:720px){
+    .workflow-responsive{grid-template-columns:repeat(2,minmax(0,1fr));}
+  }
+  @media (max-width:520px){
+    .workflow-responsive{grid-template-columns:1fr;gap:0;max-width:320px;margin:0 auto;}
+    .workflow-arrow-v{display:flex;}
+  }
+  .onprem-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  @media (max-width:640px){
+    .onprem-compare-grid{grid-template-columns:1fr;}
+  }
 `;
 
 // ─── Hero trust badges ───
@@ -152,8 +177,8 @@ const ONPREM_SECTION = `
         <h2 style="margin:16px 0 0;font-size:42px;font-weight:800;letter-spacing:-0.03em;line-height:1.08;">Why on-premise AI?</h2>
         <p style="margin:16px 0 0;font-size:16.5px;line-height:1.6;color:var(--ink2);">For forensic investigations, where evidence sensitivity and chain of custody are non-negotiable, deployment model is an architectural decision.</p>
       </div>
-      <div class="rv" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
-        <div style="background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:20px;">
+      <div class="rv onprem-compare-grid">
+        <div class="cloud-ai-card" style="display:none;background:var(--card);border:1px solid var(--hair);border-radius:20px;padding:28px 26px;flex-direction:column;gap:20px;">
           <div style="display:flex;align-items:center;gap:11px;">
             <div style="width:40px;height:40px;border-radius:11px;background:color-mix(in oklab,var(--ink3),#fff 88%);display:flex;align-items:center;justify-content:center;">
               <i class="ph ph-cloud" style="font-size:20px;color:var(--ink3);"></i>
@@ -169,7 +194,7 @@ const ONPREM_SECTION = `
             </sc-for>
           </div>
         </div>
-        <div style="background:linear-gradient(180deg,#fff,var(--accent-tint));border:1px solid var(--accent-line);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:20px;box-shadow:0 20px 50px -30px color-mix(in oklab,var(--accent),transparent 35%);">
+        <div class="onprem-ai-card" style="width:100%;background:linear-gradient(180deg,#fff,var(--accent-tint));border:1px solid var(--accent-line);border-radius:20px;padding:28px 26px;display:flex;flex-direction:column;gap:20px;box-shadow:0 20px 50px -30px color-mix(in oklab,var(--accent),transparent 35%);">
           <div style="display:flex;align-items:center;gap:11px;">
             <div style="width:40px;height:40px;border-radius:11px;background:linear-gradient(155deg,var(--accent),var(--accent-strong));display:flex;align-items:center;justify-content:center;">
               <i class="ph ph-buildings" style="font-size:20px;color:#fff;"></i>
@@ -190,6 +215,109 @@ const ONPREM_SECTION = `
   </section>
 
 `;
+
+const WORKFLOW_SECTION_OLD = `      <div class="rv" style="display:flex;flex-direction:column;align-items:center;gap:18px;">
+        <div style="display:flex;align-items:stretch;flex-wrap:nowrap;justify-content:center;">
+          <sc-for list="{{ workflowRow1 }}" as="s" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;">
+              <div class="card-lift" style="width:176px;min-height:172px;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div style="width:38px;height:38px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;">
+                    <i class="ph {{ s.icon }}" style="font-size:19px;color:var(--accent-strong);"></i>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink3);">{{ s.num }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="font-size:13.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;">{{ s.label }}</span>
+                  <span style="font-size:11.5px;color:var(--ink3);line-height:1.35;">{{ s.sub }}</span>
+                </div>
+              </div>
+              <sc-if value="{{ s.arrow }}">
+                <i class="ph ph-arrow-right" style="font-size:26px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);margin:0 10px;flex-shrink:0;"></i>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:2px 0;">
+          <i class="ph ph-arrow-down" style="font-size:22px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);"></i>
+        </div>
+        <div style="display:flex;align-items:stretch;flex-wrap:nowrap;justify-content:center;">
+          <sc-for list="{{ workflowRow2 }}" as="s" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;">
+              <div class="card-lift" style="width:176px;min-height:172px;background:var(--card);border:1px solid var(--hair);border-radius:16px;padding:24px 18px;display:flex;flex-direction:column;gap:14px;">
+                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div style="width:38px;height:38px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;">
+                    <i class="ph {{ s.icon }}" style="font-size:19px;color:var(--accent-strong);"></i>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink3);">{{ s.num }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="font-size:13.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;">{{ s.label }}</span>
+                  <span style="font-size:11.5px;color:var(--ink3);line-height:1.35;">{{ s.sub }}</span>
+                </div>
+              </div>
+              <sc-if value="{{ s.arrow }}">
+                <i class="ph ph-arrow-right" style="font-size:26px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);margin:0 10px;flex-shrink:0;"></i>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>`;
+
+const WORKFLOW_CARD_HEAD = `                <div style="display:flex;align-items:center;justify-content:space-between;">
+                  <div style="width:38px;height:38px;border-radius:11px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;">
+                    <i class="ph {{ s.icon }}" style="font-size:19px;color:var(--accent-strong);"></i>
+                  </div>
+                  <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink3);">{{ s.num }}</span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:5px;">
+                  <span style="font-size:13.5px;font-weight:700;letter-spacing:-0.01em;line-height:1.2;">{{ s.label }}</span>
+                  <span style="font-size:11.5px;color:var(--ink3);line-height:1.35;">{{ s.sub }}</span>
+                </div>`;
+
+const WORKFLOW_SECTION_NEW = `      <div class="workflow-desktop rv">
+        <div class="workflow-row">
+          <sc-for list="{{ workflowRow1 }}" as="s" hint-placeholder-count="4">
+            <div class="workflow-unit">
+              <div class="workflow-card card-lift">
+${WORKFLOW_CARD_HEAD}
+              </div>
+              <sc-if value="{{ s.arrow }}">
+                <i class="ph ph-arrow-right workflow-arrow-h"></i>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:center;padding:2px 0;">
+          <i class="ph ph-arrow-down workflow-arrow-between"></i>
+        </div>
+        <div class="workflow-row">
+          <sc-for list="{{ workflowRow2 }}" as="s" hint-placeholder-count="3">
+            <div class="workflow-unit">
+              <div class="workflow-card card-lift">
+${WORKFLOW_CARD_HEAD}
+              </div>
+              <sc-if value="{{ s.arrow }}">
+                <i class="ph ph-arrow-right workflow-arrow-h"></i>
+              </sc-if>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div class="workflow-responsive rv">
+        <sc-for list="{{ workflow }}" as="s" hint-placeholder-count="7">
+          <div class="workflow-item">
+            <div class="workflow-card card-lift">
+${WORKFLOW_CARD_HEAD}
+            </div>
+            <sc-if value="{{ s.arrow }}">
+              <div class="workflow-arrow-v" aria-hidden="true">
+                <i class="ph ph-arrow-down"></i>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>`;
 
 // ─── Software stack cards ───
 const SOFTWARE_TABLE_OLD = `      <div class="rv" style="background:var(--card);border:1px solid var(--hair);border-radius:20px;overflow:hidden;">
@@ -307,7 +435,19 @@ const RENDER_VALS_NEW = `  renderVals() {
       { icon: 'ph-seal-check', label: 'Evidence-Backed Findings', sub: 'Answers with citations' },
       { icon: 'ph-file-text', label: 'Professional Reports', sub: 'Court ready output' },
     ];
-    const workflow = wfRaw.map((s, i) => ({ ...s, num: String(i + 1).padStart(2, '0'), arrow: i < wfRaw.length - 1 }));
+    const workflow = wfRaw.map((s, i) => ({
+      ...s,
+      num: String(i + 1).padStart(2, '0'),
+      arrow: i < wfRaw.length - 1,
+    }));
+    const workflowRow1 = workflow.slice(0, 4).map((s, i) => ({
+      ...s,
+      arrow: i < 3,
+    }));
+    const workflowRow2 = workflow.slice(4).map((s, i) => ({
+      ...s,
+      arrow: i < 2,
+    }));
 
     const security = [
       { icon: 'ph-shield-check', title: 'Internal Only', desc: "The entire platform runs inside the firm's network, with no public exposure.", featured: true },
@@ -381,7 +521,7 @@ const RENDER_VALS_NEW = `  renderVals() {
     return {
       heroNodes, heroGuarantees, whyCards, archLayers, ragPipeline,
       cloudCompare, onPremCompare,
-      infra, softwareStack, workflow, security, hwInitial, hwProd, phases, recBullets, nextSteps,
+      infra, softwareStack, workflow, workflowRow1, workflowRow2, security, hwInitial, hwProd, phases, recBullets, nextSteps,
     };
   }`;
 
@@ -503,6 +643,7 @@ function main() {
     `<i class="ph ph-caret-right" style="font-size:16px;color:var(--ink3);margin:0 6px;flex-shrink:0;"></i>`,
     `<i class="ph ph-arrow-right" style="font-size:20px;color:color-mix(in oklab,var(--accent),var(--ink3) 55%);margin:0 10px;flex-shrink:0;"></i>`
   );
+  t = t.replace(WORKFLOW_SECTION_OLD, WORKFLOW_SECTION_NEW);
 
   // Security featured cards
   const secCardOld = `<div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.09);border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;gap:16px;transition:background .3s ease,border-color .3s ease;" style-hover="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.16);">
