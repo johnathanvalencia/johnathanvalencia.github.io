@@ -1,0 +1,42 @@
+.chemical-safety { 
+    .hero-absolute.img { overflow: hidden; }
+
+    .hero_img img { transform: scale(1.8); transform-origin: 20% 50%;
+        @include respond-to(tablet) { transform: scale(1.2); transform-origin: left 36%; }
+    }
+
+    .page-intro h1 { padding: 72px 20px 0; font-size: 44px;
+        @include respond-to(tablet) { padding: 72px 0 0; font-size: 60px; }
+    }
+
+    .leadership { 
+        @include respond-to(tablet) { margin-top: 136px; padding-right: 24px; }
+        @include respond-to(desktop-1024) { margin-top: 144px; padding-right: 24px; }
+        @include respond-to(desktop-1280) { margin-top: 160px; padding-right: 24px; } 
+        @include respond-to(desktop-1366) { margin-top: 164px; padding-right: 0; }
+        .leadership-info_quote {
+            @include respond-to(tablet) { font-size: 16px; line-height: 1.5; }
+            @include respond-to(desktop-1366) { font-size: 18px; line-height: 26px; }
+        } 
+    }
+
+    .short-mid-col { 
+        @include respond-to(tablet) { width: 780px;
+            .primary-content { width: auto; }
+        }
+    }
+
+    .right-col { display: none;
+        @include respond-to(desktop-1024) { display: block; } 
+    }
+
+    .with-full-image { margin-top: -56px; margin-bottom: -44px;
+        .content { padding-top: 0px !important; padding-bottom: 0 !important; }
+    }
+
+    .prefooter-img { padding-bottom: 24px;
+        @include respond-to(tablet) { padding-bottom: 0; }
+    }
+
+    footer { padding-top: 0; }
+}

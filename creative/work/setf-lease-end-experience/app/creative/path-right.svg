@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="496px" height="168px" viewBox="0 0 496 168" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Path</title>
+    <g id="Desktop-Design-Concept-Approved" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.5">
+        <g id="Journey---Turn-In" transform="translate(-567.000000, -1090.000000)">
+            <g id="Path" transform="translate(567.992188, 1091.496094)">
+                <path d="M0,0 C66.5520833,62.1510417 129.888021,97.0429688 190.007813,104.675781 C280.1875,116.125 452.503906,110.570313 484.324219,156.410156" id="Path-2" stroke="#009E98" stroke-width="2" stroke-dasharray="12"></path>
+                <path d="M480.635845,163.515638 L488.816062,155.335421 C488.999129,155.152354 488.999129,154.855571 488.816062,154.672466 L480.635845,146.492249 C480.452778,146.309182 480.155957,146.309182 479.972929,146.492249 L479.199539,147.265638 C479.016472,147.448667 479.016472,147.74545 479.199539,147.928555 L486.258085,155.003924 L479.199539,162.079293 C479.016472,162.26236 479.016472,162.559143 479.199539,162.74221 L479.972929,163.515638 C480.155957,163.698667 480.452778,163.698667 480.635845,163.515638 Z" id="chevron-right" fill="#009E98" fill-rule="nonzero" transform="translate(484.007801, 155.003929) rotate(40.000000) translate(-484.007801, -155.003929) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

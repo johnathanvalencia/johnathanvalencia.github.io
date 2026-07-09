@@ -1,0 +1,36 @@
+.about-us-intro { display: flex; flex-direction: column; justify-content: space-between; padding: 138px 20px 48px; max-width: 1144px; margin: 0 auto;
+    @include respond-to(tablet) { padding: 138px 32px 48px; }
+    @include respond-to(desktop-1024) { flex-direction: row; padding: 168px 32px 102px; }
+    @include respond-to(desktop-1280) { padding: 168px 0 102px; } 
+    .img { 
+        @include respond-to(desktop-1024) { width: 36%; }
+        @include respond-to(desktop-1280) { width: 44%; } 
+        img { width: 100%; height: auto; max-width: 400px;
+            @include respond-to(desktop-1024) { max-width: 360px; } 
+            @include respond-to(desktop-1280) { max-width: 456px; } 
+        }
+    }
+    .info { padding-top: 32px;
+        @include respond-to(desktop-1024) { width: 56%; } 
+        @include respond-to(desktop-1280) { width: 52%; }
+        h1 { padding-left: 4px; }
+        h2 { font-size: 24px; font-weight: 400; padding: 24px 0 16px; 
+            @include respond-to(desktop-1024) { font-size: 32px; } 
+        }
+        p { font-size: 15px; line-height: 24px; 
+            @include respond-to(desktop-1024) { max-width: 552px; } 
+            a { text-decoration: underline;
+                &:link, &:visited, &:active { color: inherit; }
+                &:hover { color: $primary-color; }
+            }
+        }
+    }
+}
+
+.section-executive-leadership, .section-board-of-trustees { background: linear-gradient(to bottom, #fafbfe 0%, rgba(250, 251, 254, 0) 25%); }
+
+.about-executive-leaderhip, .about-board-of-trustees {
+    h2 { font-size: 36px; }
+}
+
+.content.about-executive-leaderhip { padding-bottom: 0 !important; }

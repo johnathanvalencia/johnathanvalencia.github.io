@@ -1,0 +1,38 @@
+.lease-end-experience_turn-in {
+    .journey-turnin-intro { max-width: 680px; text-align: center; padding-top: 216px;
+        @include respond-to(tablet) { padding-top: 168px; }
+        @include respond-to(desktop-1280) { padding-top: 200px; } /*96*/
+        p { padding: 8px 40px 0; font-size: 15px; line-height: 22px; 
+            @include respond-to(desktop-1280) { padding: 16px 16px 0; font-size: 18px; line-height: 26px; }
+        }
+    }
+    .path-arrow { display: none; justify-content: center; position: relative; width: 100%;
+        @include respond-to(tablet) { display: flex; }
+        .arrow-1 { margin: 0 0 32px 0; 
+            @include respond-to(desktop-1024) { margin: -48px 0 16px 180px; }
+            @include respond-to(desktop-1280) { margin: -56px 0 16px 180px; }
+        }
+        .arrow-2 { margin: -4px 0 32px 0; 
+            @include respond-to(desktop-1024) { margin: -32px 148px 40px 0; }
+            @include respond-to(desktop-1280) { margin: -32px 268px 56px 0; }
+        }
+        .arrow-3 { margin: -16px 0 32px 0; 
+            @include respond-to(desktop-1024) { margin: 48px 0 -24px 8px; }
+            @include respond-to(desktop-1280) { margin: 56px 0 -50px 8px; }
+        }
+        .arrow-4 { margin: 32px 0 24px 0; 
+            @include respond-to(desktop-1024) { margin: 40px 8px 16px 0; }
+            @include respond-to(desktop-1280) { margin: 56px 8px 8px 0; }
+        }
+        .arrow-5 { margin: 16px 0 32px 0; 
+            @include respond-to(desktop-1024) { margin: 40px 56px -24px 0; }
+            @include respond-to(desktop-1280) { margin: 56px 56px -48px 0; }
+        }
+        #arrowHead { position: relative; width: 300px; height: 102px; 
+            @include respond-to(desktop-1280) { width: 496px; height: 168px; }
+        }
+        #arrowHeadLeft { position: relative; width: 300px; height: 100px; 
+            @include respond-to(desktop-1280) { width: 456px; height: 152px; }
+        }
+    }
+}
